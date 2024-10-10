@@ -24,3 +24,11 @@ document.getElementById("discount").innerHTML = discount
 // コンソール表示
 // clg
 console.log(name)
+
+// 複数表示
+console.log(price, quantity, discount)
+
+// 定数
+const TAX_RATE = 0.1
+// TAX_RATE = 0.2
+console.log(TAX_RATE)
