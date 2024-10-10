@@ -20,3 +20,7 @@ document.getElementById("quantity").innerHTML = quantity
 // 割引 
 var discount = 100
 document.getElementById("discount").innerHTML = discount
+
+// コンソール表示
+// clg
+console.log(name)
