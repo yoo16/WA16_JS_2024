@@ -1,59 +1,34 @@
-// オーダー
+// オーダーアプリ
 const TAX_RATE = 0.1;
-var name = "コーヒー";
+var itemName = "コーヒー";
 var price = 500;
 var quantity = 2;
 var discount = 100;
 var totalPrice = 0;
+var tableNo = 1;
 
-// TODO: 関数定義 & 実装（calculate プログラムから）
 /**
- * order()
- * オーダー表示
- * 
- * @param {*} name 
- * @param {*} price 
- * @param {*} quantity 
+ * showHTML()
+ * HTML表示
  */
-function order(name, price, quantity) {
-    // HTML表示
-}
+// TODO: 関数定義
+
 
 /**
  * calculateTotalPrice()
  * 合計金額（税込）の計算 
- * 
- * @param {*} price 
- * @param {*} quantity 
- * @param {*} discount 
- * @returns 
  */
-function calculateTotalPrice(price, quantity, discount) {
-    // 合計金額計算
-    // 値を返す
-}
+// TODO: 関数定義
 
 /**
  * createOrderCode()
- * オーダーコード生成して返す
- * xx-xxxx
- * 
- * @param {*} tableNo 
- * @param {*} orderNo 
- * @returns 
+ * オーダーコード作成
  */
-function createOrderCode(tableNo, orderNo) {
-    // オーダーコード生成
-    // オーダーコードを返す
-}
+// TODO: 関数定義
 
 /**
  * randomNumber()
  * ランダムな整数
- * 
- * @param {*} min 
- * @param {*} max 
- * @returns 
  */
 const randomNumber = (min, max) => {
     //(0 - 1 のランダム) * (最大値 - 最小値) + 最小値
@@ -61,30 +36,10 @@ const randomNumber = (min, max) => {
     return number;
 }
 
-/**
- * formatDate()
- * 年月日生成
- * 
- * @param {*} year 
- * @param {*} month 
- * @param {*} day 
- * @returns 
- */
+// TODO: HTML表示（商品名、価格、個数）
 
-// TODO: 関数で実行
-// オーダー処理
+// TODO: 合計金額計算
 
-// 合計金額取得処理
-// HTML表示（割引、合計金額）
+// TODO: HTML表示（割引、合計金額）
 
-// オーダー完了処理（タイマー）
-document.getElementById('status').innerHTML = "Loading..."
-setTimeout(() => {
-    document.getElementById('status').innerHTML = "オーダーが完了しました"
-
-    var tableNo = randomNumber(1, 10);
-    var orderNo = randomNumber(1000, 10000);
-    var orderCode = createOrderCode(tableNo, orderNo);
-    console.log(orderCode)
-    document.getElementById('order-code').innerHTML = orderCode;
-}, 2000);
+// TODO: オーダーコード（テーブルNo-オーダーNo）、完了メッセージ処理
