@@ -22,6 +22,18 @@ setTimeout(() => {
     console.log("実行しました！")
 }, 3000);
 
+// 小数四捨五入、切り捨て
+var height = 169.5
+var result = 0
+
+result = Math.round(height)
+console.log(result)
+result = Math.ceil(height)
+console.log(result)
+result = Math.floor(height)
+console.log(result)
+
+
 /**
  * ユーザ定義関数
  */
