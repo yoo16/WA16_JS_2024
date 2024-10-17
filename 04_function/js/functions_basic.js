@@ -37,3 +37,9 @@ console.log(result)
 /**
  * ユーザ定義関数
  */
+
+function calculate(x) 
+{
+    var y = x + 5
+    return y
+}
