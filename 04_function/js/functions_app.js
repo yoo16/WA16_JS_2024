@@ -12,7 +12,9 @@ var tableNo = 1;
  * HTML表示
  */
 // TODO: 関数定義
-
+function showHTML(id, value) {
+    document.getElementById(id).innerHTML = value
+}
 
 /**
  * calculateTotalPrice()
