@@ -48,19 +48,6 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// TODO: HTML表示（商品名、価格、個数）
-showHTML('item-name', itemName)
-showHTML('price', price)
-showHTML('quantity', quantity)
-
-
-// TODO: 合計金額計算
-totalPrice = calculateTotalPrice(price, quantity, discount)
-
-// TODO: HTML表示（割引、合計金額）
-showHTML('discount', discount)
-showHTML('totalPrice', totalPrice)
-
 // TODO: オーダーコード（テーブルNo-オーダーNo）
 function createOrderCode(tableNo) {
     // 1000 から 10000 のランダムな整数
@@ -69,6 +56,19 @@ function createOrderCode(tableNo) {
     // オーダーコードを返す
     return orderCode
 }
+
+// メイン処理
+// TODO: HTML表示（商品名、価格、個数）
+showHTML('item-name', itemName)
+showHTML('price', price)
+showHTML('quantity', quantity)
+
+// TODO: 合計金額計算
+totalPrice = calculateTotalPrice(price, quantity, discount)
+
+// TODO: HTML表示（割引、合計金額）
+showHTML('discount', discount)
+showHTML('totalPrice', totalPrice)
 
 // オーダーコード生成
 var orderCode = createOrderCode(tableNo)
