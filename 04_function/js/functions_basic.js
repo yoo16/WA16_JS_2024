@@ -41,3 +41,6 @@ function calculate(x) {
     var y = x + 5
     return y
 }
+
+var answer = calculate(10)
+console.log(answer)
