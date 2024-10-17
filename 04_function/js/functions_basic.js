@@ -46,3 +46,15 @@ function calculate(x) {
 // calculate() に数字を入れてを実行
 var answer = calculate(10)
 console.log(answer)
+
+// 無名関数
+const hello1 = function(name) {
+    console.log(name + "さん、こんにちは")
+}
+hello1("HAL")
+
+// アロー関数
+const hello2 = (name) => {
+    console.log(name + "さん、こんにちは")
+}
+hello2("HAL")
