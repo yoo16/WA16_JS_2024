@@ -21,9 +21,14 @@ function showHTML(id, value) {
  * 合計金額（税込）の計算 
  */
 // TODO: 関数定義
+function calculateTotalPrice(price, quantity, discount) {
+    var totalPrice = (price * quantity - discount) * (1 + TAX_RATE)
+    var totalPrice = totalPrice.toFixed() 
+    return totalPrice
+}
 
 /**
- * createOrderCode()
+ * createOrderCode(
  * オーダーコード作成
  */
 // TODO: 関数定義
@@ -39,9 +44,16 @@ const randomNumber = (min, max) => {
 }
 
 // TODO: HTML表示（商品名、価格、個数）
+showHTML('item-name', itemName)
+showHTML('price', price)
+showHTML('quantity', quantity)
+
 
 // TODO: 合計金額計算
+var totalPrice = calculateTotalPrice(price, quantity, discount)
 
 // TODO: HTML表示（割引、合計金額）
+showHTML('discount', discount)
+showHTML('totalPrice', totalPrice)
 
 // TODO: オーダーコード（テーブルNo-オーダーNo）、完了メッセージ処理
