@@ -37,10 +37,12 @@ console.log(result)
 /**
  * ユーザ定義関数
  */
+// fun と入力して、 Function Statementを選択
 function calculate(x) {
     var y = x + 5
     return y
 }
 
+// calculate() に数字を入れてを実行
 var answer = calculate(10)
 console.log(answer)
