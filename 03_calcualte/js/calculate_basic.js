@@ -19,6 +19,7 @@ totalPrice = totalPrice.toFixed()
 const night_charge_rate = 1.25 
 
 totalPrice *= night_charge_rate
+// totalPrice = totalPrice * night_charge_rate
 
 // コンソール表示
 console.log(totalPrice)
