@@ -23,7 +23,7 @@ function showHTML(id, value) {
 // TODO: 関数定義
 function calculateTotalPrice(price, quantity, discount) {
     var totalPrice = (price * quantity - discount) * (1 + TAX_RATE)
-    var totalPrice = totalPrice.toFixed() 
+    var totalPrice = totalPrice.toFixed()
     return totalPrice
 }
 
@@ -68,9 +68,13 @@ totalPrice = calculateTotalPrice(price, quantity, discount)
 showHTML('discount', discount)
 showHTML('totalPrice', totalPrice)
 
-// オーダーコード生成
-var orderCode = createOrderCode(tableNo)
-// オーダーコード表示
-showHTML('order-code', orderCode)
 
-// TODO: 完了メッセージ処理table
+// TODO: 完了メッセージ処理
+setTimeout(() => {
+    showHTML('status', "オーダー完了")
+
+    // オーダーコード生成
+    var orderCode = createOrderCode(tableNo)
+    // オーダーコード表示
+    showHTML('order-code', orderCode)
+}, 2000);
