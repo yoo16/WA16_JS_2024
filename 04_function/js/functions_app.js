@@ -43,6 +43,11 @@ const randomNumber = (min, max) => {
     return number;
 }
 
+function getRandomInt(min, max) {
+    // minとmaxを含む整数を返す
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 // TODO: HTML表示（商品名、価格、個数）
 showHTML('item-name', itemName)
 showHTML('price', price)
@@ -56,4 +61,18 @@ totalPrice = calculateTotalPrice(price, quantity, discount)
 showHTML('discount', discount)
 showHTML('totalPrice', totalPrice)
 
-// TODO: オーダーコード（テーブルNo-オーダーNo）、完了メッセージ処理
+// TODO: オーダーコード（テーブルNo-オーダーNo）
+function createOrderCode(tableNo) {
+    // 1000 から 10000 のランダムな整数
+    var orderNo = randomNumber(1000, 10000)
+    var orderCode = tableNo + "-" + orderNo
+    // オーダーコードを返す
+    return orderCode
+}
+
+// オーダーコード生成
+var orderCode = createOrderCode(tableNo)
+// オーダーコード表示
+showHTML('order-code', orderCode)
+
+// TODO: 完了メッセージ処理table
