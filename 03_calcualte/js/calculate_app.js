@@ -31,12 +31,12 @@ var tableNo = 3;
 var orderNo = 20341;
 
 // TODO: オーダーコード生成（テキスト連結）
-var orderCode = tableNo + "-" + orderNo
+var orderCode = tableNo + orderNo;
 
 // TODO: オーダーコードHTML表示
 var tableNo = 3;
 var orderNo = 20341;
 
 // TODO: オーダーコード生成（テキスト連結）
-var orderCode = tableNo + "-" + orderNo
-document.getElementById('order-code').innerHTML = orderCode
+var orderCode = tableNo + "-" + orderNo;
+document.getElementById('order-code').innerHTML = orderCode;
