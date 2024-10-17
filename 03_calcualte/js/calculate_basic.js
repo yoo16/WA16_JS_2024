@@ -6,4 +6,7 @@ var totalPrice = 0
 
 totalPrice = (price * quantity - discount) * (1 + TAX_RATE)
 
+// 小数点を処理
+totalPrice = totalPrice.toFixed()
+
 console.log(totalPrice)
