@@ -50,7 +50,7 @@ showHTML('quantity', quantity)
 
 
 // TODO: 合計金額計算
-var totalPrice = calculateTotalPrice(price, quantity, discount)
+totalPrice = calculateTotalPrice(price, quantity, discount)
 
 // TODO: HTML表示（割引、合計金額）
 showHTML('discount', discount)
