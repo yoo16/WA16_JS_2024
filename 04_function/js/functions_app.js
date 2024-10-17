@@ -78,3 +78,7 @@ setTimeout(() => {
     // オーダーコード表示
     showHTML('order-code', orderCode)
 }, 2000);
+
+// フォーマッター（コード整形）ショートカット
+// Win: Shift + Alt + F
+// Mac: Shift + Option + F
