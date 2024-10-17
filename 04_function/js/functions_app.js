@@ -28,10 +28,17 @@ function calculateTotalPrice(price, quantity, discount) {
 }
 
 /**
- * createOrderCode(
+ * createOrderCode()
  * オーダーコード作成
  */
 // TODO: 関数定義
+function createOrderCode(tableNo) {
+    // 1000 から 10000 のランダムな整数
+    var orderNo = randomNumber(1000, 10000)
+    var orderCode = tableNo + "-" + orderNo
+    // オーダーコードを返す
+    return orderCode
+}
 
 /**
  * randomNumber()
@@ -46,15 +53,6 @@ const randomNumber = (min, max) => {
 function getRandomInt(min, max) {
     // minとmaxを含む整数を返す
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// TODO: オーダーコード（テーブルNo-オーダーNo）
-function createOrderCode(tableNo) {
-    // 1000 から 10000 のランダムな整数
-    var orderNo = randomNumber(1000, 10000)
-    var orderCode = tableNo + "-" + orderNo
-    // オーダーコードを返す
-    return orderCode
 }
 
 // メイン処理
