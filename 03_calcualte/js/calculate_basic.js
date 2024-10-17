@@ -15,5 +15,10 @@ totalPrice = (price * quantity - discount) * (1 + TAX_RATE)
 // 小数点を処理
 totalPrice = totalPrice.toFixed()
 
+// 深夜料金を加算
+const night_charge_rate = 1.25 
+
+totalPrice *= night_charge_rate
+
 // コンソール表示
 console.log(totalPrice)
