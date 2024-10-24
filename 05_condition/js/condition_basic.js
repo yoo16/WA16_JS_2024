@@ -21,3 +21,10 @@ var money = 1000
 if (money >= price) {
     console.log("決済完了")
 }
+
+// If Else Statement
+if (money >= price) {
+    console.log("決済完了")
+} else {
+    console.log("残高不足")
+}
