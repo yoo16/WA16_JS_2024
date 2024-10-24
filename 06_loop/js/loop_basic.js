@@ -25,3 +25,14 @@ console.log(sum);
  */
 var num = 0;
 // TODO: While Loop
+// num が 10以下だったらずっと繰り返し
+while (num <= 10) {
+    // 偶数だったら表示
+    if (num % 2 == 0) {
+        console.log(num)
+    }
+    // numを１増やす
+    num++
+}
+
+// console.log(num)
