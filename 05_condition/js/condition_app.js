@@ -3,7 +3,7 @@ var money = 1000;  //所持金: 値を変えてみる
 var itemName = "コーヒー";
 var price = 500;
 var quantity = 2;
-var isMember = false;  // 会員: 値を変えてみる
+var isMember = true;  // 会員: 値を変えてみる
 // TODO: 会員の場合、割引100
 var discount = (isMember) ? 100 : 0;
 var totalPrice = 0;
@@ -78,8 +78,16 @@ function order() {
 function pay() {
     var message = "決済中...";
     // TODO: 金額が不正の場合： 金額エラー
-    // TODO: 所持金が金額以上の場合： 支払い完了
+    // TODO: 所持金が金額以上の場合： 決済完了
     // TODO: 残高不足の場合： 残高不足
+    // if-else statement
+    if (totalPrice < 0) {
+        message = "金額エラー"
+    } else if (totalPrice <= money) {
+        message = "決済完了"
+    } else {
+        message = "残高不足"
+    }
     showHTML('status', message)
 }
 
