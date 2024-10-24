@@ -41,9 +41,12 @@ var gabage = ""
 
 switch (weekday) {
     case "月":
+    case "金":
         gabage = "燃えるゴミ"
         break;
-
+    case "木":
+        gabage = "燃えないゴミ"
+        break;
     default:
         gabage = "回収なし"
         break;
