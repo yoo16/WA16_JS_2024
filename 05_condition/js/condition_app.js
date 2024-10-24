@@ -5,7 +5,7 @@ var price = 500;
 var quantity = 2;
 var isMember = false;  // 会員: 値を変えてみる
 // TODO: 会員の場合、割引100
-var discount =  0;
+var discount = (isMember) ? 100 : 0;
 var totalPrice = 0;
 var tableNo = 1;
 var message = "";
@@ -99,6 +99,7 @@ if (isMember) {
 totalPrice = calculateTotalPrice(price, quantity, discount);
 
 // TODO: 会員の場合、割引価格表示関数実行
+showHTML('discount', discount);
 
 // 合計金額表示
 showHTML('totalPrice', totalPrice);
