@@ -23,7 +23,9 @@ if (money >= price) {
 }
 
 // If Else Statement
-if (money >= price) {
+if (price < 0) {
+    console.log("価格エラー")
+} else if (money >= price) {
     console.log("決済完了")
 } else {
     console.log("残高不足")
