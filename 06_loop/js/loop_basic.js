@@ -13,6 +13,10 @@ for (let index = 0; index < 10; index++) {
  */
 var sum = 0;
 // TODO: For Loop
+for (let index = 1; index <= 1000; index++) {
+    // sum = sum + index
+    sum += index
+}
 console.log(sum);
 
 /**
