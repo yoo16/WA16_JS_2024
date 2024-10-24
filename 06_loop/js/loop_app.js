@@ -4,16 +4,17 @@ const ageSelect = document.getElementById('age-select');
 const defaultYear = 30;
 
 // TODO: optionタグ生成の繰り返し
+for (let index = 0; index <= 100; index++) {
+    // --- ここから ---
+    // optionタグ生成​
+    const option = document.createElement('option');
+    option.value = 0;
+    option.innerHTML = 0 + ' 歳';
 
-// --- ここから ---
-// optionタグ生成​
-const option = document.createElement('option');
-option.value = 0;
-option.innerHTML = 0 + ' 歳';
-
-// selectタグ に optionタグ追加​
-ageSelect.appendChild(option);
-// --- ここまで ---
+    // selectタグ に optionタグ追加​
+    ageSelect.appendChild(option);
+    // --- ここまで ---
+}
 
 /**
  * 複利計算 while
