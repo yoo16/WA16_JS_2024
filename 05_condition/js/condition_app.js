@@ -3,7 +3,7 @@ var money = 1000;  //所持金: 値を変えてみる
 var itemName = "コーヒー";
 var price = 500;
 var quantity = 2;
-var isMember = true;  // 会員: 値を変えてみる
+var isMember = false;  // 会員: 値を変えてみる
 // TODO: 会員の場合、割引100
 var discount =  0;
 var totalPrice = 0;
@@ -89,12 +89,16 @@ showHTML('price', price);
 showHTML('quantity', quantity);
 
 // TODO: 会員の場合、「会員」表示
+if (isMember) {
+    showHTML('member-status', "会員");
+} else {
+    showHTML('member-status', "一般");
+}
 
 // 合計金額関数実行
 totalPrice = calculateTotalPrice(price, quantity, discount);
 
 // TODO: 会員の場合、割引価格表示関数実行
-showHTML('member-status', "会員");
 
 // 合計金額表示
 showHTML('totalPrice', totalPrice);
