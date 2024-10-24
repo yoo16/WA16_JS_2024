@@ -15,7 +15,7 @@ console.log(result)
 
 // If Statement
 var message = ""
-var price = 500
+var price = -100
 var money = 1000
 
 if (money >= price) {
