@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+    <div class="container m-auto">
+        <h1 class="text-3xl font-bold m-4 p-6 text-center">JS18-課題01-JS基本01</h1>
+        <div class="bg-white rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4 text-center">問1:変数定義</h2>
+            <p>
+                JSのプログラムで、自分の氏名と学籍番号と変数定義してHTML表示してください。
+            </p>
+            <div class="mb-4">
+                <label for="studentNumber" class="block text-lg text-gray-700 p-2">学籍番号</label>
+                <label id="studentNumber" class="block text-xl bg-gray-50 p-2 rounded-lg">ここに学籍番号表示</label>
+            </div>
+
+            <div>
+                <label for="studentName" class="block text-lg text-gray-700 p-2">氏名</label>
+                <label id="studentName" class="block text-xl bg-gray-50 p-2 rounded-lg">ここに氏名表示</label>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4 text-center">問2:Documentオブジェクト</h2>
+            <p>
+                JSのプログラムで、ウィンドウタイトルを「課題01-学籍番号-氏名」に変更してください。
+            </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 mb-4">
+            <h2 class="text-2xl font-bold mb-4 text-center">問3:演算</h2>
+            <p class="text-lg text-gray-700 p-2">
+                つぎの内容で、プログラムを完成させてください。
+            </p>
+            <div class="">
+                <div>
+                    <p class="text-lg text-gray-700 p-2">
+                        整数の中から好きな数字を思い浮かべます。
+                        <small>※好きな数字は、変数「memoryNumber」で定義</small>
+                    </p>
+                    <!-- ここに思い浮かんだ数字（変数定義した）を JSで表示 -->
+                    <div class="text-center p-3">
+                        <span id="memoryNumber" class="text-3xl">
+                            ここに好きな数字を表示
+                        </span>
+                    </div>
+                </div>
+                <ol class="list-decimal list-inside p-3">
+                    <li class="mb-2">その数字に 3 をかけます。</li>
+                    <li class="mb-2">その結果に 6 を足します。</li>
+                    <li class="mb-2">その結果を 3 で割ります。</li>
+                    <li class="mb-2">最初に思い浮かべた数字を引いてください。</li>
+                </ol>
+            </div>
+            <div class="my-5 text-center">
+                最終結果は必ず
+                <label id="answerNumber" class="block text-red-500 text-3xl text-gray-700 p-2">
+                    ここに答えを表示
+                </label>
+                になるはずです。
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg p-8">
+            <h2 class="text-2xl font-bold mb-4 text-center">問4:条件分岐と関数の実行</h2>
+            <div class="text-lg text-gray-700 py-2">
+                つぎの条件で、プログラムを完成させてください。
+            </div>
+            <div>
+                <ul>
+                    <li>0歳～5歳：0円</li>
+                    <li>6歳～17歳：500円</li>
+                    <li>18歳～64歳：1000円</li>
+                    <li>65歳以上：700円</li>
+                </ul>
+            </div>
+
+            <div class="my-4">
+                <div class="text-lg text-gray-700 py-2">
+                    年齢を入力して、検索ボタンをクリックすると料金が表示されます。
+                </div>
+                <div>
+                    <span>年齢: </span>
+                    <input type="number" id="age" class="w-[60px] border border-gray-300 rounded p-2 my-2">
+                    <span>歳</span>
+                    <button onclick="onCalculate(this)"
+                        class="mx-3 py-2 px-4 bg-teal-500 text-white rounded">検索</button>
+                </div>
+                <div class="m-4 text-center text-2xl font-bold">
+                    <span>料金は</span>
+                    <span id="fee"></span>
+                    <span>円です。</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
