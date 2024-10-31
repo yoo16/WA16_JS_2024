@@ -84,7 +84,16 @@ function onCalculate() {
 function calculateTicketPrice(age) {
     var fee = 0;
     // TODO: age（年齢）によって料金をかえる
-
+    // if (0 <= age <= 5) {
+    if (age >= 0 && age <= 5) {
+        fee = 0
+    } else if (age >= 6 && age <= 17) {
+        fee = 500
+    } else if (age >= 18 && age <= 64) {
+        fee = 1000
+    } else {
+        fee = 700
+    }
     // 料金を返す
     return fee;
 }
