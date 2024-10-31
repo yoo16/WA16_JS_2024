@@ -1,5 +1,4 @@
-// TODO: 配列の定義（'コーヒー', '紅茶', 'ほうじ茶'
-
+// TODO: 配列の定義（'コーヒー', '紅茶', 'ほうじ茶'）
 var drinks = ["コーヒー", "紅茶", "ほうじ茶"];
 console.log(drinks);
 
@@ -9,10 +8,6 @@ console.log(items)
  * 配列を文字列で表示
  */
 function showArrayString() {
-    // 配列をカンマ区切りの文字列に変換
-    var string = items.join(',');
-    document.getElementById('array-string').innerHTML = string;
-
   // 配列をカンマ区切りの文字列に変換
   // join() メソッドは、配列の要素を指定した文字列で結合して、新しい文字列を返す
   var string = drinks.join(", ");
