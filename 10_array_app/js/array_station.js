@@ -57,7 +57,7 @@ function updateStation() {
     // TODO: 駅名表示
     currentName.innerHTML = station.name;
     // TODO: 駅名（ふりがな）表示
-    currentFurigana.textContent;
+    currentFurigana.innerHTML = station.furigana;
 
     // 次の駅のインデックス
     nextStationIndex = getNextStationIndex();
