@@ -1,6 +1,10 @@
 // TODO: 配列の定義（'コーヒー', '紅茶', 'ほうじ茶'）
+
 var drinks = ["コーヒー", "紅茶", "ほうじ茶"];
 console.log(drinks);
+
+
+console.log(items)
 
 /**
  * 配列を文字列で表示
