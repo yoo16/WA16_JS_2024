@@ -41,7 +41,7 @@ const currentStation = stations[1]
 console.log(currentStation)
 
 current.innerHTML = currentStation.name
-furigan.innerHTML = currentStation.furigana
+furigana.innerHTML = currentStation.furigana
 
 // 前の駅名表示
 
