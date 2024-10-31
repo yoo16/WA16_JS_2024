@@ -91,8 +91,10 @@ function calculateTicketPrice(age) {
         fee = 500
     } else if (age >= 18 && age <= 64) {
         fee = 1000
-    } else {
+    } else if (age >= 65) {
         fee = 700
+    } else {
+        alert('予期せぬエラー');
     }
     // 料金を返す
     return fee;
