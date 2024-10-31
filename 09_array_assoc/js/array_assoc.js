@@ -4,6 +4,9 @@ const next = document.getElementById('next-station');
 const prev = document.getElementById('prev-station');
 
 // 連想配列の定義
+var station = {
+
+}
 
 // 駅名表示
 
