@@ -20,8 +20,12 @@ current.innerHTML = station.name
 furigana.innerHTML = station.furigana
 
 // 駅名、ふりがなのデータ更新
+station.name = "有楽町"
+station.furigana = "ゆうらくちょう"
 
 // 駅名表示
+current.innerHTML = station.name
+furigana.innerHTML = station.furigana
 
 // 連想配列の配列
 const stations = []
