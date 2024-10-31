@@ -73,7 +73,7 @@ function onCalculate() {
     } else {
         // 年齢が数字の場合
         // TODO: 関数 calculateTicketPrice() に年齢を入れて料金を取得し、fee に代入
-        var fee;
+        var fee = calculateTicketPrice(age);
 
         // 料金表示
         document.getElementById("fee").textContent = fee;
@@ -82,5 +82,9 @@ function onCalculate() {
 
 // TODO: 関数に年齢による料金分別をして、データを返す
 function calculateTicketPrice(age) {
+    var fee = 0;
+    // TODO: age（年齢）によって料金をかえる
 
+    // 料金を返す
+    return fee;
 }
