@@ -36,5 +36,13 @@ const stations = [
 
 console.log(stations)
 
+// 現在の駅名表示
+const currentStation = stations[1]
+console.log(currentStation)
+
+current.innerHTML = currentStation.name
+furigan.innerHTML = currentStation.furigana
+
 // 前の駅名表示
+
 // 次の駅名表示
