@@ -28,7 +28,11 @@ current.innerHTML = station.name
 furigana.innerHTML = station.furigana
 
 // 連想配列の配列
-const stations = []
+const stations = [
+    { name: "東京", furigana: "とうきょう", },
+    { name: "有楽町", furigana: "ゆうらくちょう", },
+    { name: "新橋", furigana: "しんばし", },
+]
 
 console.log(stations)
 
