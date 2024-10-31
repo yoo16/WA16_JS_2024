@@ -36,10 +36,15 @@ function showItem() {
  * 値の更新
  */
 function updateItem() {
+    // Indexを取得
     const index = document.getElementById('input-index').value;
+    // Valueを取得
     const value = document.getElementById('input-value').value;
 
+    console.log(index, value)
+
     // TODO: インデックスを指定して値更新
+    items[index] = value
 
     // 配列の値表示
     showItem();
