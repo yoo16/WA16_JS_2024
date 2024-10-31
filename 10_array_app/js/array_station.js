@@ -52,10 +52,10 @@ var prevStationIndex = getPrevStationIndex();
 function updateStation() {
     // 現在の駅
     // TODO: 配列「stations」から、現在のインデックス「currentStationIndex」で、駅（連想配列）を取得
-    var station;
+    var station = stations[currentStationIndex];
 
     // TODO: 駅名表示
-    currentName.textContent;
+    currentName.innerHTML = station.name;
     // TODO: 駅名（ふりがな）表示
     currentFurigana.textContent;
 
@@ -148,7 +148,7 @@ function displayStations() {
 // ページ読み込み時に初期化
 window.onload = () => {
     // 駅一覧表示
-    displayStations();
+    // displayStations();
     // 駅の看板更新
     updateStation();
 };
