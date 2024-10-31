@@ -62,12 +62,12 @@ function updateStation() {
     // 次の駅のインデックス
     nextStationIndex = getNextStationIndex();
     // TODO: インデックスから駅名表示
-    nextButton.textContent;
+    nextButton.innerHTML = stations[nextStationIndex].name;
 
     // 前の駅のインデックス
     prevStationIndex = getPrevStationIndex();
     // TODO: インデックスから駅名表示
-    prevButton.textContent;
+    prevButton.innerHTML = stations[prevStationIndex].name;
 }
 
 /**
