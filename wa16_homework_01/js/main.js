@@ -66,9 +66,10 @@ function onCalculate() {
     const age = document.getElementById("age").value;
     console.log(age);
 
-    if (isNaN(age)) {
+    if (isNaN(age) || age < 0) {
         // 年齢が数字でない場合
         // TODO: アラート表示「年齢が正しくありません」
+        alert("年齢が正しくありません")
     } else {
         // 年齢が数字の場合
         // TODO: 関数 calculateTicketPrice() に年齢を入れて料金を取得し、fee に代入
