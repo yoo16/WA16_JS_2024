@@ -54,6 +54,8 @@ function updateStation() {
     // TODO: 配列「stations」から、現在のインデックス「currentStationIndex」で、駅（連想配列）を取得
     var station = stations[currentStationIndex];
 
+    // TODO: 現在の駅の情報
+
     // TODO: 駅名表示
     currentName.innerHTML = station.name;
     // TODO: 駅名（ふりがな）表示
