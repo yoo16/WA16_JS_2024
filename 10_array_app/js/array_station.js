@@ -130,27 +130,30 @@ function onStationClick(id) {
  */
 function displayStations() {
     // TODO: 駅名ボタン表示の繰り返し(for of)
-    // ---- ここから ---
+    for (const station of stations) {
+        // ---- ここから ---
         const stationElement = document.createElement('div');
         stationElement.className = `
-            station text-sm w-full h-[40px] rounded-full 
-            bg-green-500 text-white flex items-center justify-center 
-            m-1 cursor-pointer
-        `;
+        station text-sm w-full h-[40px] rounded-full 
+        bg-green-500 text-white flex items-center justify-center 
+        m-1 cursor-pointer
+    `;
         // 駅名
         stationElement.textContent = station.name;
         // クリックしたとき
         stationElement.onclick = () => onStationClick(station.id);
-    
+
         stationMap.appendChild(stationElement);
-    // ---- ここまで ---
-    
+        // ---- ここまで --- 
+    }
+
+
 }
 
 // ページ読み込み時に初期化
 window.onload = () => {
     // 駅一覧表示
-    // displayStations();
+    displayStations();
     // 駅の看板更新
     updateStation();
 };
