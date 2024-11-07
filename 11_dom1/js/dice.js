@@ -18,6 +18,7 @@ console.log(titleElement.className)
 
 // TODO: titleElement に class設定
 // text-red-500 text-4xl font-bold mb-4
+titleElement.className = "text-red-500 text-4xl font-bold mb-4"
 
 /**
  * randomNumber()
