@@ -49,7 +49,7 @@ const rollDice = () => {
     // messageElement.textContent = '<p class="text-green-800">サイコロをふりました！</p>'
 
     // TODO: data-number に number を設定
-    resultElement.dataset.number
+    resultElement.dataset.number = number
 }
 
 // サイコロの実行
