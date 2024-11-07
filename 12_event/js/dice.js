@@ -21,7 +21,7 @@ const randomNumber = (min, max) => {
 const updateDiceImage = (number) => {
     var resultElement = document.getElementById("result");
     // TODO: サイコロ画像の更新
-    resultElement.src
+    resultElement.src = "images/dice" + number + ".png"
 };
 
 /**
