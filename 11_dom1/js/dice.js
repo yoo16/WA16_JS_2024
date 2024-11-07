@@ -44,7 +44,9 @@ const rollDice = () => {
 
     // TODO: messageElement に HTMLを表示
     // <p class="text-green-800">サイコロをふりました！</p>
-    messageElement.innerHTML
+    messageElement.innerHTML = '<p class="text-green-800">サイコロをふりました！</p>'
+    // messageElement.innerText = '<p class="text-green-800">サイコロをふりました！</p>'
+    // messageElement.textContent = '<p class="text-green-800">サイコロをふりました！</p>'
 
     // TODO: data-number に number を設定
     resultElement.dataset.number
