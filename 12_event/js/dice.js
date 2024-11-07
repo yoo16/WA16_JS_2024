@@ -21,6 +21,7 @@ const randomNumber = (min, max) => {
 const updateDiceImage = (number) => {
     var resultElement = document.getElementById("result");
     // TODO: サイコロ画像の更新
+    // ./ は現在のフォルダを意味
     resultElement.src = "./images/dice" + number + ".png"
 };
 
@@ -31,11 +32,14 @@ const updateDiceImage = (number) => {
 // TODO: HTMLに onclickイベントで登録
 const rollDice = () => {
     console.log("Click!");
-    // TODO: 1 - 6 のランダムな数字を取得
-    number = randomNumber(1, 6)
 
-    // TODO: updateDiceImage() に number を渡して実行
-    updateDiceImage(number)
+    const timer = setInterval(() => {
+        // TODO: 1 - 6 のランダムな数字を取得
+        number = randomNumber(1, 6)
+
+        // TODO: updateDiceImage() に number を渡して実行
+        updateDiceImage(number)
+    }, 50);
 
     // TODO: アニメーション開始: class = rolling を追加
 
