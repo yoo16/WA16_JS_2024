@@ -32,8 +32,10 @@ const updateDiceImage = (number) => {
 const rollDice = () => {
     console.log("Click!");
     // TODO: 1 - 6 のランダムな数字を取得
+    number = randomNumber(1, 6)
 
-    // TODO: サイコロが振られている間、updateDiceImage() で画像をランダムに変更(0.05秒インターバル）
+    // TODO: updateDiceImage() に number を渡して実行
+    updateDiceImage(number)
 
     // TODO: アニメーション開始: class = rolling を追加
 
