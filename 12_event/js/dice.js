@@ -41,16 +41,22 @@ const rollDice = () => {
     }, 50);
 
     // TODO: アニメーション開始: class = rolling を追加
+    // img タグを取得
+    var resultElement = document.getElementById("result");
+    // class = rolling を追加
+    resultElement.classList.add('rolling')
 
     // TODO: setTImeout で２秒後にサイコロを止める
     setTimeout(() => {
         // タイマー停止
         clearInterval(timer)
+        // TODO: アニメーション終了 class = rolling を削除
+        resultElement.classList.remove('rolling')
+
         // メッセージ更新
         messageElement.innerHTML = "サイコロをふりました！";
     }, 2000);
 
-    // TODO: アニメーション終了 class = rolling を削除
 
 };
 
