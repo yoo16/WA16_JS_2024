@@ -36,7 +36,6 @@ const rollDice = () => {
     var timer = setInterval(() => {
         // TODO: 1 - 6 のランダムな数字を取得
         number = randomNumber(1, 6)
-
         // TODO: updateDiceImage() に number を渡して実行
         updateDiceImage(number)
     }, 50);
