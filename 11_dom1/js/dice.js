@@ -39,7 +39,8 @@ const rollDice = () => {
     var number = randomNumber(1, 6)
 
     // TODO: resultElement に number を表示
-    resultElement.innerHTML
+    // resultElement.innerText = number
+    resultElement.textContent = number
 
     // TODO: messageElement に HTMLを表示
     // <p class="text-green-800">サイコロをふりました！</p>
