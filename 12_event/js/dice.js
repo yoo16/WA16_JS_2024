@@ -33,7 +33,7 @@ const updateDiceImage = (number) => {
 const rollDice = () => {
     console.log("Click!");
 
-    const timer = setInterval(() => {
+    var timer = setInterval(() => {
         // TODO: 1 - 6 のランダムな数字を取得
         number = randomNumber(1, 6)
 
@@ -44,10 +44,15 @@ const rollDice = () => {
     // TODO: アニメーション開始: class = rolling を追加
 
     // TODO: setTImeout で２秒後にサイコロを止める
+    setTimeout(() => {
+        // タイマー停止
+        clearInterval(timer)
+        // メッセージ更新
+        messageElement.innerHTML = "サイコロをふりました！";
+    }, 2000);
+
     // TODO: アニメーション終了 class = rolling を削除
 
-    // メッセージ更新
-    messageElement.innerHTML = "サイコロをふりました！";
 };
 
 // ウィンドウ読み込み完了後に実行
