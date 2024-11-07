@@ -11,7 +11,10 @@ messageElement.innerHTML = 'サイコロをふってください！';
 /**
  * ランダムな整数を生成
  */
-const randomNumber = (min, max) => {
+// const randomNumber = (min, max) => {
+//     return Math.floor(Math.random() * (max + 1 - min)) + min;
+// };
+function randomNumber(min, max) {
     return Math.floor(Math.random() * (max + 1 - min)) + min;
 };
 
@@ -19,6 +22,7 @@ const randomNumber = (min, max) => {
  * サイコロの画像を切り替える関数
  */
 const updateDiceImage = (number) => {
+    // imgタグ
     var resultElement = document.getElementById("result");
     // TODO: サイコロ画像の更新
     // ./ は現在のフォルダを意味
@@ -33,6 +37,7 @@ const updateDiceImage = (number) => {
 const rollDice = () => {
     console.log("Click!");
 
+    // 0.05秒間隔で画像を切り替える
     var timer = setInterval(() => {
         // TODO: 1 - 6 のランダムな数字を取得
         number = randomNumber(1, 6)
@@ -56,7 +61,6 @@ const rollDice = () => {
         // メッセージ更新
         messageElement.innerHTML = "サイコロをふりました！";
     }, 2000);
-
 
 };
 
