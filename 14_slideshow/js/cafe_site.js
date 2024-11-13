@@ -28,10 +28,10 @@ function animationText(text, callback) {
     // 現在、何文字目かのインデックス
     var index = 0;
     function displayNextChar() {
-        // TODO: spanタグ作成
-        // TODO: spanタグに、index番目の文字を設定
-        // TODO: class=fade-in を設定
-        // TODO: copyElement に spanタグを追加
+        // TODO: spanタグ作成 createElement()
+        // TODO: spanに、text の index番目の文字を設定
+        // TODO: class=fade-in を設定: classList.add()
+        // TODO: copyElement に spanタグを追加: appendChild()
 
         // 文字インデックスを増やす
         index++;
@@ -56,19 +56,19 @@ function switchBackground() {
     // 背景画像のインデックス更新
     imageIndex = (imageIndex + 1) % images.length;
 
-    // TODO: Imageオブジェクト作成
+    // TODO: Imageオブジェクト作成 
     var image;
-    // TODO: Imageオブジェクトに配列の画像設定
+    // TODO: Imageオブジェクトに配列 images の画像パス設定: image.src
 
     // 画像がロードされたら実行
     image.onload = () => {
-        // TODO: backgroundImage のフェードアウト(のスタイルの opacity = 0)
+        // TODO: backgroundImage のフェードアウト: style.opacity = 0
 
         // フェードインで画像表示
         setTimeout(() => {
-            // TODO: backgroundImage(imgタグ) に画像設定
+            // TODO: backgroundImage(imgタグ)に、images のインデックスを指定して画像設定
 
-            // TODO: フェードアウト(スタイルの opacity = 1)
+            // TODO: backgroundImage(imgタグ)に、フェードイン: style.opacity = 1
         }, fadeInTime);
     };
 }
