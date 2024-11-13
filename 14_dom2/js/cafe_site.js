@@ -24,7 +24,7 @@ const backgroundImage = document.getElementById('background-image');
  * animationText()
  * アニメーションテキスト
  */
-function animationText(text, callback) {
+function animationText(text) {
     // 現在、何文字目かのインデックス
     var index = 0;
     function displayNextChar() {
@@ -36,8 +36,7 @@ function animationText(text, callback) {
         // 文字インデックスを増やす
         index++;
         if (index < text.length) {
-            // 現在の文字インデックスが、文字数より小さければ、アニメーションテキスト継続
-            setTimeout(displayNextChar, animationTextDelay);
+            // TODO: 現在の文字インデックスが、文字数より小さければ、アニメーションテキスト継続
         } else {
             // 初回背景画像表示
             switchBackground();
@@ -58,17 +57,19 @@ function switchBackground() {
 
     // TODO: Imageオブジェクト作成 
     var image;
+
     // TODO: Imageオブジェクトに配列 images の画像パス設定: image.src
 
     // 画像がロードされたら実行
     image.onload = () => {
-        // TODO: backgroundImage のフェードアウト: style.opacity = 0
+        // TODO: backgroundImage のフェードアウト: style.opacity
 
         // フェードインで画像表示
         setTimeout(() => {
-            // TODO: backgroundImage(imgタグ)に、images のインデックスを指定して画像設定
+            // TODO: backgroundImageの src 更新
+            backgroundImage.src;
 
-            // TODO: backgroundImage(imgタグ)に、フェードイン: style.opacity = 1
+            // TODO: backgroundImage のフェードイン: style.opacity
         }, fadeInTime);
     };
 }
