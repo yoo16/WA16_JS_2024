@@ -5,6 +5,7 @@ const images = [
     'images/cafe-shop-1.jpg',
     'images/cafe-shop-2.jpg',
     'images/cafe-shop-3.jpg',
+
 ];
 // 画像の指定インデックス
 var imageIndex = 0;
@@ -66,20 +67,23 @@ function switchBackground() {
     imageIndex = (imageIndex + 1) % images.length;
 
     // TODO: Imageオブジェクト作成 
-    var image;
+    var image = document.createElement('img')
 
     // TODO: Imageオブジェクトに配列 images の画像パス設定: image.src
+    image.src = images[imageIndex]
 
     // 画像がロードされたら実行
     image.onload = () => {
         // TODO: backgroundImage のフェードアウト: style.opacity
+        backgroundImage.style.opacity = 0
 
         // フェードインで画像表示
         setTimeout(() => {
             // TODO: backgroundImageの src 更新
-            backgroundImage.src;
+            backgroundImage.src = images[imageIndex]
 
             // TODO: backgroundImage のフェードイン: style.opacity
+            backgroundImage.style.opacity = 1
         }, fadeInTime);
     };
 }
