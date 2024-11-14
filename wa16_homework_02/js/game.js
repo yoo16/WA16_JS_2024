@@ -26,12 +26,15 @@ function createThumbnails() {
         // --- 繰り返し（ここから） ---
         const thumb = document.createElement("img");
         // TODO: player.id を設定 player-id
-        thumb.id;
+        thumb.id = "player-" + player.id;
         // TODO: player.imagePath を設定
         thumb.src = player.imagePath;
         // TODO: 画像クリックイベント: selectPlayer() に player をいれる
-        thumb.onclick;
+        thumb.onclick = () => selectPlayer(player)
+
+        // クラス設定
         thumb.className = "thumbnail-image w-24 h-24 object-cover rounded-full border-2 cursor-pointer";
+        // img タグを thumbnailContainer に追加
         thumbnailContainer.appendChild(thumb);
         // --- 繰り返し（ここまで） ---
     }
