@@ -9,6 +9,7 @@ function Person(name, age) {
 
 
 // TODO: 関数型オブジェクトのインスタンス生成
+const person = new Person("HAL太郎", 25)
 
 // TODO: インスタンスでブラウザ表示
 // name
