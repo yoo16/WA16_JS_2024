@@ -189,7 +189,10 @@ function hideInputArea() {
 function start() {
     if (selectedPlayer.id) {
         // TODO: Playerインスタンス生成
+        const player = new Player(selectedPlayer)
         // TODO: greet() 実行
+        player.greet()
+
         hideInputArea();
     } else {
         showMessage("キャラクターを選択してください。");
