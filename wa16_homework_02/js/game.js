@@ -21,17 +21,21 @@ var typingTimeout;
  */
 function createThumbnails() {
     // TODO: players を for of で繰り返し
-    // --- 繰り返し（ここから） ---
-    const thumb = document.createElement("img");
-    // TODO: player.id を設定
-    thumb.id;
-    // TODO: player.imagePath を設定
-    thumb.src;
-    // TODO: 画像クリックイベント: selectPlayer() に player をいれる
-    thumb.onclick;
-    thumb.className = "thumbnail-image w-24 h-24 object-cover rounded-full border-2 cursor-pointer";
-    thumbnailContainer.appendChild(thumb);
-    // --- 繰り返し（ここまで） ---
+    for (const player of players) {
+        // console.log(player)
+        // --- 繰り返し（ここから） ---
+        const thumb = document.createElement("img");
+        // TODO: player.id を設定 player-id
+        thumb.id;
+        // TODO: player.imagePath を設定
+        thumb.src;
+        // TODO: 画像クリックイベント: selectPlayer() に player をいれる
+        thumb.onclick;
+        thumb.className = "thumbnail-image w-24 h-24 object-cover rounded-full border-2 cursor-pointer";
+        thumbnailContainer.appendChild(thumb);
+        // --- 繰り返し（ここまで） ---
+    }
+
 }
 
 /**
