@@ -206,6 +206,10 @@ function start() {
 document.onkeydown = function (event) {
     // TODO: キーボードキー「Enter」で次のメッセージ 
     // nextMessage()
+    if (event.key == "Enter") {
+        // 次のメッセージ表示
+        nextMessage()    
+    }
 }
 
 /**
