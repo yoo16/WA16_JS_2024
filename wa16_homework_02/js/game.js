@@ -149,7 +149,9 @@ function showMessage(message, name = "") {
             messageIndex++;
 
             // TODO: setTimeout() で、 typeMessage() を実行
-
+            typingTimeout = setTimeout(() => {
+                typeMessage();
+            }, 50);
         } else if (currentMessageIndex < messages.length - 1) {
             continueMark.classList.remove("hidden");
             continueMark.classList.add("blink");
