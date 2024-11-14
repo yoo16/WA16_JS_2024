@@ -43,6 +43,9 @@ function animationText(text) {
         index++;
         if (index < text.length) {
             // TODO: 現在の文字インデックスが、文字数より小さければ、アニメーションテキスト継続
+            setTimeout(() => {
+                displayNextChar()
+            }, animationTextDelay);
         } else {
             // 初回背景画像表示
             switchBackground();
