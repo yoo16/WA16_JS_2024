@@ -1,10 +1,13 @@
 // TODO: thisオブジェクト（グローバル）
+console.log(this)
 
 // TODO: 現在のURL
-document.getElementById('window-href').innerText;
+document.getElementById('window-href').innerText 
+    = location.href
 
 // TODO: ユーザエージェント
-document.getElementById('window-userAgent').innerText;
+document.getElementById('window-userAgent').innerText
+    = navigator.userAgent
 
 // TODO: ウィンドウサイズ
 document.getElementById('window-size').innerText;
