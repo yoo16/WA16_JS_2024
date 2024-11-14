@@ -32,9 +32,10 @@ function animationText(text) {
         var span = document.createElement("span")
         // spanタグに文字をいれる
         // span.textContent = text
-        span.textContent = text[index]
         // TODO: spanに、text の index番目の文字を設定
+        span.textContent = text[index]
         // TODO: class=fade-in を設定: classList.add()
+        span.classList.add("fade-in")
         // TODO: copyElement に spanタグを追加: appendChild()
         copyElement.appendChild(span)
 
