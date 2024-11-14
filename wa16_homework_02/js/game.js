@@ -28,7 +28,7 @@ function createThumbnails() {
         // TODO: player.id を設定 player-id
         thumb.id;
         // TODO: player.imagePath を設定
-        thumb.src;
+        thumb.src = player.imagePath;
         // TODO: 画像クリックイベント: selectPlayer() に player をいれる
         thumb.onclick;
         thumb.className = "thumbnail-image w-24 h-24 object-cover rounded-full border-2 cursor-pointer";
