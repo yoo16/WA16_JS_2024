@@ -58,7 +58,7 @@ function moveSlide(direction) {
     if (isTransitioning) return;
     isTransitioning = true;
 
-    // 画像インデックス計算
+    // direction でインデックス計算
     currentIndex = (currentIndex + direction + items.length) % items.length;
 
     // カルーセル処理
