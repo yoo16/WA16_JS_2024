@@ -107,6 +107,7 @@ function createThumbnails() {
 function next() {
     stopSlide()
     startSlide()
+    // 1: 右にスライド
     moveSlide(1)
 }
 
@@ -117,6 +118,7 @@ function next() {
 function prev() {
     stopSlide()
     startSlide()
+    // -1: 左にスライド
     moveSlide(-1)
 }
 
