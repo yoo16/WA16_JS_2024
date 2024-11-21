@@ -29,6 +29,7 @@ function createCarousel() {
         img.classList.add("carousel-image")
 
         // TODO: クリックでモーダルウィンドウ開く
+        img.onclick = () => openModal(item.id)
 
         // TODO: 親要素(carouselImages)に imgタグ追加
         carouselImages.appendChild(img)
