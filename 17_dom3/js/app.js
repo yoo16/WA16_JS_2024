@@ -53,7 +53,7 @@ function addItem() {
         alert("項目を入力してください。")
         return
     }
-    // liタグ作成
+    // divタグ作成
     const newItem = document.createElement("div");
     // テキスト挿入
     newItem.innerText = itemName;
@@ -66,7 +66,7 @@ function addItem() {
 
     // クラス設定
     newItem.classList.add('item');
-    // 親要素に liタグの追加
+    // 親要素に divタグの追加
     document.getElementById("item-list").appendChild(newItem);
     // 入力をクリア
     document.getElementById("item-name").value = "";
@@ -74,13 +74,15 @@ function addItem() {
 
 function removeItems() {
     // TODO: class=selected の要素をすべて取得: querySelectorAll()
-    var selectedItems;
+    var selectedItems = document.querySelectorAll('.selected')
+    console.log(selectedItems)
 
     // 要素がなければ終了
     if (!selectedItems) return;
 
-    // 子要素があれば、すべて削除
+    // 子要素があれば、繰り返してすべて削除
     selectedItems.forEach(selectedItem => {
         // TODO: DOMの削除
+        selectedItem.remove()
     });
 }
