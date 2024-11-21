@@ -27,7 +27,7 @@ function createCarouselItem(item) {
  */
 function createCarousel() {
     // TODO: 無限スクロール用に items を連結
-    const scrollItems = items
+    const scrollItems = items.concat(items)
 
     // TODO: scrollItems を forEach() で繰り返し、 createCarouselItem() でカルーセル画像追加
     scrollItems.forEach(item => {
