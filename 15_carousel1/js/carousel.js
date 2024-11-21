@@ -33,6 +33,7 @@ function createCarousel() {
     scrollItems.forEach(item => {
         // コンソール表示
         console.log(item)
+        createCarouselItem(item)
     });
 }
 
