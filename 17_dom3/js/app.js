@@ -9,7 +9,6 @@ function addNumberAppend() {
     // TODO: id=message-list の後に追加: append()
 }
 
-
 function addNumberAfter() {
     const newNumber = document.createElement("div");
     newNumber.innerText = Math.floor(Math.random() * 100);
@@ -72,7 +71,6 @@ function removeItems() {
 
     // 子要素があれば、すべて削除
     selectedItems.forEach(selectedItem => {
-        // document.getElementById("item-list").removeChild(selectedItem);
-        selectedItem.remove();
+        // TODO: DOMの削除
     });
 }
