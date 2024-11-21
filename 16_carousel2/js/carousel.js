@@ -67,7 +67,15 @@ function moveSlide(direction) {
     isTransitioning = true;
 
     // direction でインデックス計算
-    currentIndex = (currentIndex + direction + items.length) % items.length;
+    currentIndex = 
+    (currentIndex + direction + items.length) % items.length;
+    // 現在: currentIndex = 0
+    // 画像の個数: 5 (items.length)
+
+    // 右：direction = 1
+    // currentIndex = (0 + 1 + 5) / 5 のあまり = 1
+    // 左：direction = -1
+    // currentIndex = (0 - 1 + 5) / 5 のあまり = 4
 
     // カルーセル処理
     updateCarousel();
