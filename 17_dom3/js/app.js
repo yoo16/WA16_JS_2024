@@ -1,12 +1,15 @@
 function addNumberAppend() {
+    // <p></p>
     const message = document.createElement("p");
     message.innerText = Math.floor(Math.random() * 100);
     message.className = "text-blue-600 font-bold mt-2";
 
+    // <span></span>
     const info = document.createElement("span");
     info.textContent = "More text"
 
     // TODO: id=message-list の後に追加: append()
+    document.getElementById('message-list').append(message, info)
 }
 
 function addNumberAfter() {
