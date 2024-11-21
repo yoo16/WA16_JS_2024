@@ -16,10 +16,11 @@ var isTransitioning = false;
  * カルーセル画像を初期化
  */
 function createCarousel() {
-    // forEach で、サムネル画像作成
+    // forEach で、カルーセル画像作成
     items.forEach(item => {
         // --- 繰り返し（ここから）---
         // TODO: imgタグ作成
+        var img = document.createElement("img")
 
         // TODO: 画像パス設定: item.image
 
