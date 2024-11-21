@@ -1,11 +1,14 @@
 function addNumberAppend() {
     // <p></p>
     const message = document.createElement("p");
+    // ランダムな数字を挿入
     message.innerText = Math.floor(Math.random() * 100);
+    // class を設定
     message.className = "text-blue-600 font-bold mt-2";
 
     // <span></span>
     const info = document.createElement("span");
+    // テキストを挿入
     info.textContent = "More text"
 
     // TODO: id=message-list の後に追加: append()
