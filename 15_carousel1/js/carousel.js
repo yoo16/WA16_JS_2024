@@ -49,8 +49,13 @@ function scrollCarousel() {
 
     // カルーセルの幅を取得
     const totalWidth = carouselImages.scrollWidth;
-
     // TODO: スクロールが一定距離（カルーセルの幅半分）を超えたらリセット
+    if (-scrollX >= totalWidth / 2) {
+        // 半分右の位置
+        scrollX += totalWidth /2
+        // 位置を変える
+        carouselImages.style.transform = `translateX(${scrollX}px)`
+    }
 
     // TODO: アニメーションを継続
     requestAnimationFrame(scrollCarousel)
