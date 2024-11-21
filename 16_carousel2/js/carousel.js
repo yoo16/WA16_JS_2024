@@ -43,8 +43,11 @@ function createCarousel() {
  */
 function updateCarousel() {
     // TODO: オフセット計算(%): インデックス x 100
+    // 0, -100, -200, ....
+    const offset = -currentIndex * 100
 
     // TODO: 左にずらす（%): style.transform に translateX() 設定
+    carouselImages.style.transform = `translateX(${offset}%)`
 
     // TODO: アニメーションイージング: style.transition に　transform 設定
     carouselImages.style.transition = "transform 1.0s ease";
@@ -104,7 +107,7 @@ function createThumbnails() {
 function next() {
     stopSlide()
     startSlide()
-    moveSlide(-1)
+    moveSlide(1)
 }
 
 /**
@@ -114,7 +117,7 @@ function next() {
 function prev() {
     stopSlide()
     startSlide()
-    moveSlide(1)
+    moveSlide(-1)
 }
 
 /**
