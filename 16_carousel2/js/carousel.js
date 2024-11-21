@@ -139,15 +139,19 @@ function updateThumbnails() {
     // セレクタ: .thumbnail-image 
     const thumbnails =
         document.querySelectorAll(".thumbnail-image")
-
+    // コンソール表示
+    console.log(thumbnails)
+    // document.getElementsByClassName()
     // jQyery: $(".thumbnail-image")
 
     // サムネイル繰り返し
     thumbnails.forEach((thumb, index) => {
         if (index === currentIndex) {
             // TODO: 現在のインデックスで、class=active-thumbnail 追加: add()
+            thumb.classList.add("active-thumbnail")
         } else {
             // TODO: それ以外のインデックスで、class=active-thumbnail 削除: remove()
+            thumb.classList.remove("active-thumbnail")
         }
     });
 }
