@@ -23,15 +23,17 @@ function addNumberAfter() {
     const info = document.createElement("span");
     info.textContent = "More text"
     // TODO: id=start の後に追加: after()
+    document.getElementById('start').after(newNumber, info)
 }
 
 function addNumber() {
     const numberList = document.getElementById("number-list");
     const newItem = document.createElement("div");
-    newItem.innerText = Math.floor(Math.random() * 100);;
+    newItem.innerText = Math.floor(Math.random() * 100);
     newItem.className = "p-2 bg-gray-200 rounded-md mb-2";
 
     // TODO: numberListに appendChild()
+    numberList.appendChild(newItem)
 }
 
 function removeNumber() {
@@ -39,6 +41,8 @@ function removeNumber() {
     // 最後の要素があれば
     if (numberList.lastChild) {
         // TODO: 最後の要素を削除
+        numberList.lastChild.remove()
+        // numberList.removeChild(numberList.lastChild)
     }
 }
 
