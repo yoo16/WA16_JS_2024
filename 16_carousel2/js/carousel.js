@@ -67,8 +67,8 @@ function moveSlide(direction) {
     isTransitioning = true;
 
     // direction でインデックス計算
-    currentIndex = 
-    (currentIndex + direction + items.length) % items.length;
+    currentIndex =
+        (currentIndex + direction + items.length) % items.length;
     // 現在: currentIndex = 0
     // 画像の個数: 5 (items.length)
 
@@ -136,7 +136,11 @@ function prev() {
  */
 function updateThumbnails() {
     // TODO: class=thumbnail-image をすべて取得
-    const thumbnails = [];
+    // セレクタ: .thumbnail-image 
+    const thumbnails =
+        document.querySelectorAll(".thumbnail-image")
+
+    // jQyery: $(".thumbnail-image")
 
     // サムネイル繰り返し
     thumbnails.forEach((thumb, index) => {
