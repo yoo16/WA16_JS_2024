@@ -367,6 +367,10 @@ function init() {
     generateVideoList();
     // 音声ボリューム設定
     updateVolume(defaultVolume);
+    
+    // 最初の動画選択
+    // 自動再生は、mute=true でないと基本できない
+    loadAndPlayVideo(videos[0])
 }
 
 init();
