@@ -55,7 +55,10 @@ function stopAnimation() {
     isAnimating = false;
 }
 
-// キーが押されたときの処理
+/**
+ * handleKeyDown()
+ * キーが押されたときの処理
+ */
 function handleKeyDown(event) {
     // 押されたキーを記録
     keys[event.key] = true;
@@ -63,7 +66,10 @@ function handleKeyDown(event) {
     startAnimation();
 }
 
-// キーが離されたときの処理
+/**
+ * handleKeyUp()
+ * キーが離されたときの処理
+ */
 function handleKeyUp(event) {
     // 離されたキーを記録
     keys[event.key] = false;
