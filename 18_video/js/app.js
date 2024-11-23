@@ -1,5 +1,6 @@
 const video = document.getElementById('video');
 const playPauseBtn = document.getElementById('playPauseBtn');
+const progressSlider = document.getElementById('progressSlider');
 const playIcon = document.getElementById('playIcon');
 const pauseIcon = document.getElementById('pauseIcon');
 const volumeOnIcon = document.getElementById('volumeOnIcon');
@@ -56,6 +57,8 @@ function onEnded(event) {
     updatePlayIcon();
 }
 
+
+
 /**
  * playPause()
  * 再生＆停止
@@ -69,6 +72,25 @@ function playPause() {
         video.pause();
     }
     updatePlayIcon();
+}
+
+/**
+ * updateProgress()
+ * 再生スライダー更新
+ */
+function updateProgress() {
+    const currentTime = video.currentTime;
+    const duration = video.duration;
+
+    // TODO: 再生パーセント計算: currentTime / duration (%)
+    var progress = 0
+    // console.log(progress)
+
+    // スライダーの位置更新
+    progressSlider.value = progress
+
+    // TODO: スライダーの背景更新
+    progressSlider.style.background = `linear-gradient(to right, red ${progress}%, gray ${progress}%)`;
 }
 
 /**
@@ -86,21 +108,6 @@ function updatePlayIcon() {
 }
 
 /**
- * fullscreen()
- * フルスクリーン
- */
-function fullscreen() {
-    // フルスクリーンはブラウザの種類によって違う
-    if (video.requestFullscreen) {
-        video.requestFullscreen();
-    } else if (video.webkitRequestFullscreen) { // Safari
-        video.webkitRequestFullscreen();
-    } else if (video.msRequestFullscreen) { // IE/Edge
-        video.msRequestFullscreen();
-    }
-}
-
-/**
  * toggleMute()
  * 音声ミュート切り替え
  */
@@ -109,12 +116,13 @@ function toggleMute() {
     if (video.muted) {
         // TODO: ミュートOFF muted = false
 
-        // TODO: 音量スライダーにビデオ音量を設定
-
+        // 音量スライダーにビデオ音量を設定
+        volumeSlider.value = video.volume;
     } else {
         // TODO: ミュートON muted = true
 
-        // TODO: 音量スライダーを 0
+        // 音量スライダーを 0
+        volumeSlider.value = 0;
     }
     // 音声アイコン更新
     updateVolumeIcon();
@@ -127,7 +135,6 @@ function toggleMute() {
 function onChangeVolume(event) {
     // 音量スライダーの値取得し、volume に設定
     volume = event.target.value;
-    // console.log(volume)
 
     // 音量設定
     changeVolume(volume)
@@ -138,10 +145,10 @@ function onChangeVolume(event) {
  * 音量変更
  */
 function changeVolume(value) {
-    // TODO: 音量設定
-
-    // TODO: Mute判別 value == 0 か？
-
+    // 音量設定
+    video.volume = value;
+    // Mute判別
+    video.muted = (value == 0);
     // 音声アイコン更新
     updateVolumeIcon();
 }
@@ -175,14 +182,6 @@ function updateCurrentTime() {
 }
 
 /**
- * updateDuration()
- * ビデオの長さ更新
- */
-function updateDuration() {
-    durationDisplay.textContent = formatTime(video.duration);
-}
-
-/**
  * skip()
  * ビデオの時間スキップ
  */
@@ -196,6 +195,29 @@ function skip(seconds) {
  */
 function changePlaybackSpeed() {
     // TODO: 再生スピード設定
+}
+
+/**
+ * updateDuration()
+ * ビデオの長さ更新
+ */
+function updateDuration() {
+    durationDisplay.textContent = formatTime(video.duration);
+}
+
+/**
+ * fullscreen()
+ * フルスクリーン
+ */
+function fullscreen() {
+    // フルスクリーンはブラウザの種類によって違う
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.webkitRequestFullscreen) { // Safari
+        video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) { // IE/Edge
+        video.msRequestFullscreen();
+    }
 }
 
 // キーボードイベント
@@ -256,6 +278,9 @@ function updateCurrentTimeAndComments() {
     updateCurrentTime();
 
     // TODO: コメントの表示を更新: updateComments() の実行
+
+    // スライダーの位置を更新
+    updateProgress();
 }
 
 /**
