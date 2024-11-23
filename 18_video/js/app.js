@@ -227,16 +227,19 @@ window.onkeydown = (event) => {
         // TODO: スペースキーだったら、playPause() で再生 or 停止
     } else if (event.shiftKey && event.key == "ArrowRight") {
         event.preventDefault();
-        // TODO: Shift + 右矢印キーだったら、早送り2
+        // Shift + 右矢印キーだったら、早送り2
+        skip(step2)
     } else if (event.key == "ArrowRight") {
         event.preventDefault();
-        // TODO: 右矢印キーだったら、早送り1
+        skip(step1)
     } else if (event.shiftKey && event.key == "ArrowLeft") {
         event.preventDefault();
-        // TODO: Shift + 左矢印キーだったら、巻き戻し2
+        // Shift + 左矢印キーだったら、巻き戻し2
+        skip(-step2)
     } else if (event.key == "ArrowLeft") {
         event.preventDefault();
-        // TODO: 左矢印キーだったら、巻き戻し1
+        // 左矢印キーだったら、巻き戻し1
+        skip(-step1)
     }
 };
 
