@@ -23,8 +23,10 @@ function loadVideo(filePath) {
  */
 function onLoadedVideo() {
     // TODO: ビデオ音量設定
+    video.volume = volume
 
     // TODO: 音量スライダー設定
+    volumeSlider.value = volume
 }
 
 /**
