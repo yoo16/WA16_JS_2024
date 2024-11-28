@@ -67,13 +67,12 @@ function loadAndPlayVideo(selectedVideo) {
     videoTitle.textContent = selectedVideo.title;
 
     // TODO: 動画ファルパス設定: video.src に videoPath
-    video.src = selectedVideo.videoPath;
+
     // TODO: 動画のロード
-    video.load();
+
     // TODO: 動画再生: video.play()
-    video.play();
+
     // TODO: 動画コメントデータを更新: comments
-    comments = selectedVideo.comments;
 
     // 表示済みコメントをリセット
     displayedComments = [];

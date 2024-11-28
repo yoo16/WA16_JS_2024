@@ -11,10 +11,8 @@ const videoFile = "videos/video1.mp4";
  * ビデオ読み込み
  */
 function loadVideo(filePath) {
-    // TODO: ビデオファイルパス設定
-
-    // TODO: ビデオ読み込み
-
+    // TODO: 新しい動画設定で読み込み​
+    // TODO: 再生位置リセットで読み込み​
 }
 
 /**
@@ -25,6 +23,23 @@ function onLoadedVideo() {
     // TODO: ビデオ音量設定
 
     // TODO: 音量スライダー設定
+}
+
+/**
+ * onLoadedMetadata()
+ * ビデオメタデータ読み込み後の処理
+ */
+function onLoadedMetadata() {
+    // TODO: duration（長さ）表示
+    document.getElementById('duration').textContent
+    // TODO: volume（音量）表示
+    document.getElementById('volume').textContent
+    // TODO: currentTime（現在の時間）表示
+    document.getElementById('currentTime').textContent
+    // TODO: paused（停止フラグ）表示
+    document.getElementById('paused').textContent
+    // TODO: playbackRate（再生速度）表示
+    document.getElementById('playbackRate').textContent
 }
 
 /**
