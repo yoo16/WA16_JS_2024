@@ -69,6 +69,7 @@ function changeVolume(value) {
  */
 function play() {
     // TODO: ビデオ再生
+    video.play()
 }
 
 /**
@@ -77,7 +78,7 @@ function play() {
  */
 function pause() {
     // TODO: ビデオ停止
-
+    video.puase()
 }
 
 /**
