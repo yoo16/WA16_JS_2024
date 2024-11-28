@@ -78,7 +78,7 @@ function play() {
  */
 function pause() {
     // TODO: ビデオ停止
-    video.puase()
+    video.pause()
 }
 
 /**
