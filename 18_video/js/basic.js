@@ -33,15 +33,15 @@ function onLoadedVideo() {
  */
 function onLoadedMetadata() {
     // TODO: duration（長さ）表示
-    document.getElementById('duration').textContent
+    document.getElementById('duration').textContent = video.duration
     // TODO: volume（音量）表示
-    document.getElementById('volume').textContent
+    document.getElementById('volume').textContent = video.volume
     // TODO: currentTime（現在の時間）表示
-    document.getElementById('currentTime').textContent
+    document.getElementById('currentTime').textContent = video.currentTime
     // TODO: paused（停止フラグ）表示
-    document.getElementById('paused').textContent
+    document.getElementById('paused').textContent = video.paused
     // TODO: playbackRate（再生速度）表示
-    document.getElementById('playbackRate').textContent
+    document.getElementById('playbackRate').textContent = video.playbackRate
 }
 
 /**
