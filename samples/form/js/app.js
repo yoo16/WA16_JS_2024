@@ -12,6 +12,16 @@ const items = [
 ];
 
 const messageElement = document.getElementById('message');
+var selectedItem = {}
+
+function createItemList() {
+    for (const item of items) {
+        var option = document.createElement('option')
+        option.value = item.id;
+        option.textContent = item.name;
+        document.getElementById('itemList').append(option);
+    }
+}
 
 function handleButtonClick() {
     messageElement.textContent = "";
@@ -21,7 +31,7 @@ function handleButtonClick() {
     // 個数
     const quantity = document.getElementById('quantity').value;
     // 商品検索（ID）
-    var selectedItem = findItem(itemId);
+    selectedItem = findItem(itemId);
 
     if (quantity <= 0) {
         messageElement.textContent = '個数を入力してくださし。';
@@ -36,13 +46,14 @@ function handleButtonClick() {
 function handleSelectChange() {
     const itemId = document.getElementById('itemList').value;
     // 商品検索（ID）
-    const selectedItem = findItem(itemId);
+    selectedItem = findItem(itemId);
+    console.log(selectedItem);
     document.getElementById('price').textContent = selectedItem.price;
 }
 
 // 商品検索
 function findItem(id) {
-    return items.find((item) => item.id = id)
+    return items.find((item) => item.id == id)
 }
 
 // オーダー
@@ -54,3 +65,6 @@ function order(item, quantity) {
 
     messageElement.textContent = message;
 }
+
+
+createItemList();
