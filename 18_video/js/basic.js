@@ -12,7 +12,9 @@ const videoFile = "videos/video1.mp4";
  */
 function loadVideo(filePath) {
     // TODO: 新しい動画設定で読み込み​
+    video.src = filePath
     // TODO: 再生位置リセットで読み込み​
+    video.load()
 }
 
 /**
