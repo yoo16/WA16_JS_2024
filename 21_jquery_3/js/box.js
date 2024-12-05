@@ -15,6 +15,9 @@ $(function () {
 
     const box2 = $("#box2");
     // TODO: 幅設定
+    // box2.width(300)
     // TODO: 高さ設定
+    // box2.height(50)
+    box2.width(300).height(50)
     // TODO: 位置設定
 });
