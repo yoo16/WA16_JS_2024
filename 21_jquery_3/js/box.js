@@ -5,7 +5,10 @@ $(function () {
     const width = box1.width()
     const height = box1.height()
     const offset = box1.offset()
-    const id = "";
+    const id = box1.attr('id');
+
+    // class を空にする
+    // box1.attr('class', '')
 
     // text() を使って値を設定
     $("#id-info span").text(id);
