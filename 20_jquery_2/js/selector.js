@@ -1,10 +1,12 @@
 $(() => {
     // TODO: id=title
-    var titleElement
+    var titleElement = $("#title")
     console.log(titleElement)
 
     // TODO: class=city
-    var cityElements
+    var cityElements = $(".city")
+    // document.getElementsByClassName('city')
+    // document.querySelectorAll('.city')
     console.log(cityElements)
 
     // TODO: id=jp-city の class=city
