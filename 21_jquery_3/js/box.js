@@ -20,4 +20,5 @@ $(function () {
     // box2.height(50)
     box2.width(300).height(50)
     // TODO: 位置設定
+    box2.offset({ left: 30, top: 380 })
 });
