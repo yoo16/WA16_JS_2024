@@ -36,10 +36,11 @@ $(() => {
     // TODO: get(): .city に指定インデックスで取得(バニラJS)
     console.log($('.city').get(0))
 
-    // TODO: eq(): .city に指定インデックスで取得(jQueryオブジェクト)q
+    // TODO: eq(): .city に指定インデックスで取得(jQueryオブジェクト)
     console.log($('.city').eq(0))
 
     // TODO: eq(): .city の最初を取得し、class=bg-red-500 を追加
+    $('.city').eq(0).addClass('bg-red-500')
 
     // TODO: eq(): .city の最初を取得し、class=bg-red-500 を追加
 
