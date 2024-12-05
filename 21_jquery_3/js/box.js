@@ -21,4 +21,7 @@ $(function () {
     box2.width(300).height(50)
     // TODO: 位置設定
     box2.offset({ left: 30, top: 380 })
+
+    // body の高さを5000px にする
+    $('body').height(5000)
 });
