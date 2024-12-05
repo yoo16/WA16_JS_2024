@@ -50,18 +50,17 @@ $(() => {
     // TODO: last(): .city の最後を取得し、class=bg-red-500 を追加
     $('.city').last().addClass('bg-red-500')
 
-    // TODO: .city をすべて取得し、class=bg-red-300 を削除
-
     // TODO: filter(): 指定した条件に一致した要素を選択
     // .city をすべて取得し、奇数に class=bg-gray-200 を追加
+    $('.city').filter(':odd').addClass('bg-gray-200')
 
     // TODO: not(): 指定した条件に一致しない要素を選択
     // 奇数以外（偶数）の要素に class=bg-blue-300 を追加 
-
-    // TODO: find(): 子孫要素を取得
+    $('.city').not(':odd').addClass('bg-blue-300')
 
     // TODO: slice(): 選択した要素を部分的に取得
     // 2番目から3番目の要素を取得し、class=bg-orange-500 を追加
+    $('.city').slice(1, 3).addClass('bg-orange-500')
 
     // nth-child()
     // TODO: id=us-city の class=city のインデックス「2」を選択
