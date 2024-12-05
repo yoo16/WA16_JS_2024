@@ -18,10 +18,11 @@ $(() => {
     console.log(usCityList)
 
     // TODO: html() 取得
-    var title
-    console.log(title)
+    var title = $('#title').html()
+    console.log("title: ", title)
 
     // TODO: html() 設定
+    $('#title').html('JP City')
 
     // TODO: .city に addClass()
     // bg-gray-300
