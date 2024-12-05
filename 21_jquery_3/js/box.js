@@ -2,9 +2,9 @@ $(function () {
     const box1 = $("#box1");
 
     // TODO: 各種情報の取得
-    const width = 0
-    const height = 0
-    const offset = 0
+    const width = box1.width()
+    const height = box1.height()
+    const offset = box1.offset()
     const id = "";
 
     // text() を使って値を設定
