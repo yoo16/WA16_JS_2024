@@ -14,8 +14,9 @@ $('#click-button').on('click', function () {
 // changeイベント
 $("#select-list").on("change", function () {
     // TODO: 1) 自分の値を取得
-    const selected = $(this).val()
-    // TODO: 2) 自分を「option:selectd」でフィルタリングし、テキスト取得
+    // const selected = $(this).val()
+    // TODO: 2) 自分を「option:selected」でフィルタリングし、テキスト取得
+    const selected = $(this).find('option:selected').text()
     const message = selected + "が選択されました";
     $("#result-event").text(message);
 });
