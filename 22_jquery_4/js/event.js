@@ -66,4 +66,6 @@ $('#box').on('mouseout', mouseOutHandler)
 // クリックイベント
 $('#event-off-button').on('click', function () {
     // TODO: mouseover, mouseoutイベント解除
+    $('#box').off('mouseover', mouseOverHandler)
+    $('#box').off('mouseout', mouseOutHandler)
 });
