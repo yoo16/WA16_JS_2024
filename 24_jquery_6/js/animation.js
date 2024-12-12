@@ -51,6 +51,8 @@ $(function () {
     $("#easingBtn").on("click", function () {
         initBox();
         // TODO: box1 を width=300px でアニメーション: easing=linear
+        box1.animate({ width: '300px'})
+
         // TODO: box2 を width=300px でアニメーション: easing=swing
     })
 
@@ -80,11 +82,19 @@ $(function () {
         // TODO: box1 に CSS設定
         // width = 100px
         // height = 100px
+        box1.css({
+            width: '100px',
+            height: '100px',
+        })
 
         box2.removeClass("bg-blue-400").addClass("bg-green-400");
         // TODO: box2 に CSS設定
         // width = 100px
         // height = 100px
+        box2.css({
+            width: '100px',
+            height: '100px',
+        })
     }
 
     initBox();
