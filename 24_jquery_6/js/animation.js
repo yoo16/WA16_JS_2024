@@ -5,14 +5,17 @@ $(function () {
 
     $("#showBtn").on("click", function () {
         // TODO: パネルを表示
+        panel.show(500)
     });
 
     $("#hideBtn").on("click", function () {
         // TODO: パネルを非表示
+        panel.hide(500)
     });
 
     $("#toggleBtn").on("click", function () {
         // TODO: パネルをトグル表示
+        panel.toggle(500)
     });
 
     $("#fadeInBtn").on("click", function () {
