@@ -20,26 +20,32 @@ $(function () {
 
     $("#fadeInBtn").on("click", function () {
         // TODO: パネルをフェードイン
+        panel.fadeIn(500)
     });
 
     $("#fadeOutBtn").on("click", function () {
         // TODO: パネルをフェードアウト
+        panel.fadeOut(500)
     });
 
     $("#fadeToggleBtn").on("click", function () {
         // TODO: パネルをフェードトグル
+        panel.fadeToggle(500)
     });
 
     $("#slideDownBtn").on("click", function () {
         // TODO: パネルをスライド表示
+        panel.slideDown(500)
     });
 
     $("#slideUpBtn").on("click", function () {
         // TODO: パネルをスライド非表示
+        panel.slideUp(500)
     });
 
     $("#slideToggleBtn").on("click", function () {
         // TODO: パネルをスライドトグル
+        panel.slideToggle(500)
     });
 
     $("#easingBtn").on("click", function () {
