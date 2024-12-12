@@ -25,14 +25,16 @@ $("#select-list").on("change", function () {
 $('#input-text').on({
     input: function () {
         // TODO: 自分の値を取得
-        const inputText = ""
+        const inputText = $(this).val()
         $("#result-event").text(inputText)
     },
     focus: function () {
         // TODO: 自分の class=bg-blue-100 追加
+        $(this).addClass('bg-blue-100')
     },
     blur: function () {
         // TODO: 自分の class=bg-blue-100 削除
+        $(this).removeClass('bg-blue-100')
     }
 });
 
@@ -42,7 +44,9 @@ $('#item-list').on('click', 'li', function () {
     $("#result-event").text(message)
 
     // TODO: #item-list li で class=bg-orange-100 をすべて削除
+    $('#item-list li').removeClass('bg-orange-100')
     // TODO: 自分に class=bg-orange-100 を追加
+    $(this).addClass('bg-orange-100')
 });
 
 // マウスオーバー イベントハンドラー
