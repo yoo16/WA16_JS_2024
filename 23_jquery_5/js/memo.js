@@ -72,6 +72,7 @@ $(function () {
     $('#btn-remove').on('click', function () {
         if (selected) {
             // TODO: 選択中の要素を削除
+            selected.remove();
 
             // 選択解除
             selected = $();
