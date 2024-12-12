@@ -1,12 +1,12 @@
 // バニラJS
 // document.getElementById('click-button').addEventListener("click", function () { 
-//     $("#result-event").text('クリックしました')
+//     document.getElementById("result-event").innerText = 'クリックしました'
 //  })
 
 // jqon
 // id = click-button に clickイベントを登録
 $('#click-button').on('click', function () {
-    
+    $("#result-event").text('クリックしました')
 });
 
 // clickイベント
