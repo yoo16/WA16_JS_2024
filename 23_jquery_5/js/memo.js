@@ -79,8 +79,10 @@ $(function () {
     });
 
     $('#item-list').on('click', 'li', function () {
-        // $('#item-list li').removeClass(selectedClass).addClass(unselectedClass);
+        $('#item-list li').removeClass(selectedClass).addClass(unselectedClass);
         $(this).addClass(selectedClass).removeClass(unselectedClass);
         // TODO: 選択
+        // 選択用のメモリに、自分自身を入れる
+        selected = $(this)
     });
 });
