@@ -39,8 +39,10 @@ $(function () {
     $('#btn-prepend').on('click', function () {
         const element = newItem();
         // TODO: 親要素(id=item-list)の最初に追加
+        $('#item-list').prepend(element);
 
         // TODO: テキストボックス(id=input-text)を空にする
+        $('#input-text').val('');
     });
 
     $('#btn-before').on('click', function () {
