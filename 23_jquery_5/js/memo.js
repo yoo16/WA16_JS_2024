@@ -58,7 +58,8 @@ $(function () {
     });
 
     $('#btn-after').on('click', function () {
-        if (selected.length) {
+        // if (selected.length) {
+        if (selected) {
             const element = newItem();
             // TODO: 選択中の要素の後に追加
             selected.after(element)
