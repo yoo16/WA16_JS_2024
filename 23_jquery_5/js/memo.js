@@ -10,7 +10,13 @@ $(function () {
         //TODO: liタグを作成し、テキスト表示
         const li = $('<li>');
         li.text(value)
+
+        // バニラJSで書くと
+        // const li = document.createElement('li')
+        // li.innerText = value 
+
         // <li>xxxxx</li>
+
         //TODO: defaultClassを追加
         li.addClass(defaultClass)
         // <li class="xxxx xxx xxxx">xxxxx</li>
@@ -23,14 +29,16 @@ $(function () {
 
     $('#btn-append').on('click', function () {
         const element = newItem();
-        // TODO: 親要素(id=select-list)の最後に elementを追加
+        // TODO: 親要素(id=item-list)の最後に elementを追加
+        // jqappend
+        $('#item-list').append(element);
 
         $('#input-text').val('');
     });
 
     $('#btn-prepend').on('click', function () {
         const element = newItem();
-        // TODO: 親要素(id=select-list)の最初に追加
+        // TODO: 親要素(id=item-list)の最初に追加
 
         // TODO: テキストボックス(id=input-text)を空にする
     });
