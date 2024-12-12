@@ -3,6 +3,12 @@
 //     $("#result-event").text('クリックしました')
 //  })
 
+// jqon
+// id = click-button に clickイベントを登録
+$('#click-button').on('click', function () {
+    
+});
+
 // clickイベント
 // TODO: id=click-button にclickイベント追加
 // TODO: id=result-event にメッセージ表示
