@@ -4,21 +4,18 @@
 //  })
 
 // jqon
-// id = click-button に clickイベントを登録
-$('#click-button').on('click', function () {
-    $("#result-event").text('クリックしました')
-});
-
 // clickイベント
 // TODO: id=click-button にclickイベント追加
-// TODO: id=result-event にメッセージ表示
-
+$('#click-button').on('click', function () {
+    // TODO: id=result-event にメッセージ表示
+    $("#result-event").text('クリックしました')
+});
 
 // changeイベント
 $("#select-list").on("change", function () {
     // TODO: 1) 自分の値を取得
+    const selected = $(this).val()
     // TODO: 2) 自分を「option:selectd」でフィルタリングし、テキスト取得
-    const selected = ""
     const message = selected + "が選択されました";
     $("#result-event").text(message);
 });
