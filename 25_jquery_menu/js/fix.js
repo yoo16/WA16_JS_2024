@@ -9,5 +9,8 @@ $(window).scroll(function () {
         });
     } else {
         // TODO: 固定解除 css設定：position: static
+        $('#nav').css({
+            position: 'static',
+        });
     }
 });
