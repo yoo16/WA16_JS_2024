@@ -9,11 +9,15 @@ $(function () {
         slideMenu();
     });
 
+    // 強制再読み込み
+    // Win: Ctrl + Shift + R
+    // Mac: Cmd + Shift + R
     // 初期化処理
     function initMenu() {
         // TODO: css指定：transform: 'translateX(-100%)'
+        // 横軸方向に、-100%ずらず（左）
         $slideMenu.css({
-
+            transform: 'translateX(-100%)'
         });
     }
 
@@ -21,10 +25,13 @@ $(function () {
     function slideMenu() {
         var x = '0px';
         // TODO: スライドメニューの class=on をトグル
+        $slideMenu.toggleClass('on');
         if ($slideMenu.hasClass('on')) {
             // TODO: x をスライドメニューの幅で設定
+            x = $slideMenu.width() + 'px'
         }
         // TODO: marginLeft に xを設定してアニメーション
+        $slideMenu.animate({ marginLeft: x }, 300)
     }
 
     // スムーススクロール
