@@ -83,14 +83,17 @@ $(function () {
         const items = $('.item');
         items.addClass('hidden');
 
-        const delayTime = 300;
+        const delayTime = 1000;
 
         // items 繰り返し(each)
         items.each(function (i) {
             // TODO: delay()
             // TODO: queue()
-            // TODO: コールバックで、class=hidden を削除
-            // TODO: dequeue()
+            $(this).delay((i + 1) * delayTime).queue(() => {
+                // TODO: コールバックで、class=hidden を削除
+                // TODO: dequeue()
+                $(this).removeClass('hidden').dequeue();
+            })
         });
     });
 
