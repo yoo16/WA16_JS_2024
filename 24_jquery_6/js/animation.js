@@ -70,8 +70,13 @@ $(function () {
                 opacity: 1,
             }, 1000)
 
-
         // TODO: box2 を連続アニメーション
+        box2.animate({ width: '50px', height: '50px' }, 1000)
+            .delay(1000)
+            .animate({
+                width: '100px',
+                height: '100px',
+            }, 1000)
     });
 
     $("#queueBtn").on("click", function () {
