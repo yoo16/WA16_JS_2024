@@ -1,5 +1,9 @@
 $(function () {
     // TODO: サムネイルクリック
+    $('.thumbnail').on('click', function () {
+        // alert('click');
+    })
+
     // TODO: img から 画像パス src を取得
     // TODO: メイン画像の img をフェードアウト
     // TODO: コールバックで、メイン画像の img にパスを設定してフェードイン
