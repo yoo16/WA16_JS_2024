@@ -35,10 +35,10 @@ $(function () {
         const target = $(anchor)
         if (target) {
             // TODO: アンカーのY座標取得: offset().top
-            const targetOffset = 0;
+            const targetOffset = target.offset().top
             // TODO: アンカーにアニメーションでスクロール: scrollTop: targetOffset
             $('html, body').stop().animate({
-
+                scrollTop: targetOffset
             }, 500);
         }
     });
