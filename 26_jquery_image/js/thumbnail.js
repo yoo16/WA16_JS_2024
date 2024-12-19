@@ -11,6 +11,19 @@ $(function () {
     })
 });
 
+// $(function () {
+//     // サムネイルクリック
+//     $('.thumbnail').on('click', function () {
+//         // 画像パス src を取得
+//         const src = $(this).attr('src');
+        
+//         // メイン画像のフェードアウト -> src更新 -> フェードイン
+//         $('#main-image')
+//             .animate({ opacity: 0 }, 300)
+//             .attr('src', src)
+//             .animate({ opacity: 1 }, 300);
+//     });
+// });
 
 // バニラJSの場合
 // document.addEventListener("DOMContentLoaded", function () {
