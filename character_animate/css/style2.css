@@ -35,3 +35,23 @@ body, html {
     object-fit: cover; /* 画像を要素に収める */
     display: block; /* 画像要素の場合にブロック表示 */
 }
+
+.hexagon {
+    width: 200px; /* 必要な幅 */
+    height: 200px; /* 必要な高さ */
+    clip-path: polygon(
+        50% 0%, 
+        100% 25%, 
+        100% 75%, 
+        50% 100%, 
+        0% 75%, 
+        0% 25%
+    ); /* 六角形のクリッピングパス */
+}
+
+.ellipse {
+    width: 300px; /* 必要な幅 */
+    height: 200px; /* 必要な高さ */
+    clip-path: ellipse(50% 50% at 50% 50%); /* 楕円のクリッピング */
+}
+

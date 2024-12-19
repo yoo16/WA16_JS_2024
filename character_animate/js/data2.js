@@ -6,7 +6,7 @@ const worksData = [
         title: "作品1",
     },
     {
-        x: 300, y: 200,
+        x: 60, y: 250,
         src: "images/character_2.png",
         frameClass: "square",
         title: "作品2",
@@ -14,13 +14,13 @@ const worksData = [
     {
         x: 500, y: 0,
         src: "images/character_3.png", 
-        frameClass: "triangle",
+        frameClass: "ellipse",
         title: "作品3"
     },
     {
-        x: 200, y: 500,
+        x: 350, y: 200,
         src: "images/character_4.png", 
-        frameClass: "circle",
+        frameClass: "hexagon",
         title: "作品4"
     },
     {
