@@ -21,7 +21,8 @@ $(function () {
 
         items.push({
             work: workEl[0],
-            position: { x: data.x, y: data.y }
+            position: { x: data.x, y: data.y },
+            isVisible: true // 初期状態では可視
         });
     });
 
@@ -97,16 +98,51 @@ $(function () {
         targetX -= vx;
         targetY -= vy;
 
-        X += (targetX - X);
-        Y += (targetY - Y);
+        X += (targetX - X) * 0.1;
+        Y += (targetY - Y) * 0.1;
+
+        // スクロール範囲をチェックし、ループ処理
+        if (X <= -W / 2) {
+            X += W;
+            targetX += W;
+        } else if (X >= W / 2) {
+            X -= W;
+            targetX -= W;
+        }
+
+        if (Y <= -H / 2) {
+            Y += H;
+            targetY += H;
+        } else if (Y >= H / 2) {
+            Y -= H;
+            targetY -= H;
+        }
 
         const translateX = X % W;
         const translateY = Y % H;
-        const margin = 100;
 
         stage.css("transform", `translate(${translateX}px, ${translateY}px)`);
-        clones.forEach(clone => {
-            clone.css("transform", `translate(${translateX - margin}px, ${translateY + margin}px)`);
+
+        // 画像が表示領域に収まっているかを判定
+        items.forEach(item => {
+            const itemX = translateX + item.position.x;
+            const itemY = translateY + item.position.y;
+
+            const isVisible =
+                itemX + $(item.work).width() > 0 &&
+                itemX < W &&
+                itemY + $(item.work).height() > 0 &&
+                itemY < H;
+
+            if (isVisible && !item.isVisible) {
+                // 画像が表示領域内に入る場合
+                $(item.work).stop().fadeIn(800);
+                item.isVisible = true;
+            } else if (!isVisible && item.isVisible) {
+                // 画像が表示領域外に出る場合
+                $(item.work).stop().fadeOut(800);
+                item.isVisible = false;
+            }
         });
 
         window.requestAnimationFrame(update);
@@ -115,7 +151,7 @@ $(function () {
     function createWorkElement(data) {
         const work = $("<div>").addClass("work");
         const image = $("<img>").addClass("image-item").attr("src", data.src);
-        image.addClass(data.frameClass)
+        image.addClass(data.frameClass);
         work.append(image);
         return work;
     }
