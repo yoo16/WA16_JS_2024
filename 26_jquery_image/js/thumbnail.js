@@ -3,7 +3,8 @@ $(function () {
     $('.thumbnail').on('click', function () {
         // TODO: img から 画像パス src を取得
         const src = $(this).attr('src')
-        alert(src);
+        // alert(src);
+        $('#main-image').attr('src', src)
     })
     // TODO: メイン画像の img をフェードアウト
     // TODO: コールバックで、メイン画像の img にパスを設定してフェードイン
