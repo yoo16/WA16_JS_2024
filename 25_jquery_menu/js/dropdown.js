@@ -1,7 +1,7 @@
 $(function () {
     //TODO: class=menu の a リンクでアンカーを含むもの
     // .menu a[href^="#"]
-    const $menuLink = $('');
+    const $menuLink = $('.menu a[href^="#"]');
 
     // メニュー取得: class=menu
     const $navMenus = $(".menu");
@@ -11,10 +11,12 @@ $(function () {
         function () {
             // TODO: 親メニューの子要素 ul を slideDown() アニメーション
             // TODO: アニメーションは一旦停止
+            $(this).children('ul').stop().slideDown(200)
         },
         function () {
             // TODO: 親メニューの子要素 ul を slideUp() アニメーション
             // TODO: アニメーションは一旦停止
+            $(this).children('ul').stop().slideUp(200)
         }
     );
     $navMenus.on('click', function () {
@@ -29,6 +31,8 @@ $(function () {
 
         // アンカーに設定された値を取得
         const anchor = this.getAttribute('href');
+        // TODO: target を設定: id=xxxxx
+        const target = $(anchor)
         if (target) {
             // TODO: アンカーのY座標取得: offset().top
             const targetOffset = 0;
