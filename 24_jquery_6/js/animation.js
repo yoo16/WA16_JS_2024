@@ -51,14 +51,25 @@ $(function () {
     $("#easingBtn").on("click", function () {
         initBox();
         // TODO: box1 を width=300px でアニメーション: easing=linear
-        box1.animate({ width: '300px'}, 2500, 'linear')
+        box1.animate({ width: '300px' }, 2500, 'linear')
 
         // TODO: box2 を width=300px でアニメーション: easing=swing
-        box2.animate({ width: '300px'}, 2500, 'swing')
+        box2.animate({ width: '300px' }, 2500, 'swing')
     })
 
+    // 強制再読み込み
+    // Win: Ctrl + Shift + R
+    // Mac: Cmd + Shift + R
     $("#animateBtn").on("click", function () {
         // TODO: box1 を連続アニメーション
+        box1.animate({ width: '300px', height: '50px' }, 1000)
+            .animate({ opacity: 0.2 }, 1000)
+            .animate({
+                width: '100px',
+                height: '100px',
+                opacity: 1,
+            }, 1000)
+
 
         // TODO: box2 を連続アニメーション
     });
