@@ -66,6 +66,14 @@ $(document).ready(function () {
         // TODO: アニメーション
         // css: position: relative, opacity: 0, left: start px
         // animate: opacity: 1, left: end px
+        $(selector).css({
+            position: 'relative',
+            opacity: 0,
+            left: start + 'px',
+        }).animate({ 
+            opacity: 1, 
+            left: end + 'px',
+        }, 1000)
     }
 
 });
