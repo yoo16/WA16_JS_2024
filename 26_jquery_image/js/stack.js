@@ -15,9 +15,9 @@ $(document).ready(function () {
 // クリック後の処理
 function stackAnimation1() {
     // TODO: class=stacked-item のスタックリスト取得（画像リスト）
-    const $images = $('#image-container');
+    const $images = $('#image-container').children('.stacked-item')
     // TODO: 最上位のスタック取得: last()
-    const $topImage = $images;
+    const $topImage = $images.last()
 
     $topImage
         .animate({
