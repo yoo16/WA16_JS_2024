@@ -29,6 +29,7 @@ $(document).ready(function () {
         // console.log(top)
 
         var left = offset.left;
+        // スクロールが対象コンテンツに達した時
         if (scrollTop + windowHeight > top + offset && $(selector).hasClass('invisible')) {
             // TODO: 表示処理：invisible クラス削除
             $(selector).removeClass('invisible')
@@ -42,7 +43,7 @@ $(document).ready(function () {
         // TODO: アニメーション
         // css: opacity: 0
         // animate: opacity: 1
-        $(selector).css('opacity', 0)
+        $(selector).css({ opacity: 0 })
             .animate({ opacity: 1 }, 1000)
     }
 
@@ -51,6 +52,8 @@ $(document).ready(function () {
         // TODO: アニメーション
         // css: opacity: 0, width:  0
         // animate: opacity: 1, width: 100%
+        $(selector).css({ opacity: 0, width: 0 })
+            .animate({ opacity: 1, width: '100%' }, 1000)
     }
 
     // スライド（レフト）
