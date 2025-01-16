@@ -54,6 +54,7 @@ function stackAnimation2() {
     $topImage.addClass('swipe-out');
 
     // 移動終了後の処理
+    // CSSアニメーションが終わったら実行
     $topImage.one('transitionend', function () {
         // 要素を先頭に移動
         $topImage.prependTo('#image-container');
@@ -73,21 +74,4 @@ function stackAnimation2() {
             });
         }, 100);
     }
-}
-
-function stackAnimation2() {
-    const $images = $('#image-container').children('.stacked-item');
-    const $topImage = $images.last();
-
-    // TODO: スワイプアウト: クラス追加：swipe-out
-
-    // CSSアニメーション終了後の処理
-    $topImage.one('transitionend', function () {
-        // TODO: 要素を先頭に移動
-
-        setTimeout(() => {
-            // TODO: swipe-out 削除
-        }, 100);
-    });
-
 }
