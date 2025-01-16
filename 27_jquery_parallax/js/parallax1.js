@@ -11,7 +11,7 @@ $(document).ready(function () {
 
         // TODO: parallaxHeight: パララックス対象の高さ取得
         // jqOuterHeight
-        const parallaxHeight = 0
+        const parallaxHeight = $parallax.outerHeight();
 
         // TODO: バックグラウンド画像を上へ移動：
         // background-position-y: -scrollY px
@@ -23,6 +23,7 @@ $(document).ready(function () {
 
         // TODO: 文字の位置を設定： transform: translateY(translateY px)
         // jqCssSet 
+        $parallaxContent.css('transform', 'translateY(' + translateY + 'px)');
     });
 
 });
