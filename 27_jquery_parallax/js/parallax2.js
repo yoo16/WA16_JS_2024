@@ -26,10 +26,12 @@ $(document).ready(function () {
         const scrollTop = $(window).scrollTop();
         // TODO: コンテンツ位置取得: offset().top
         const top = $(selector).offset().top;
+        // console.log(top)
 
         var left = offset.left;
         if (scrollTop + windowHeight > top + offset && $(selector).hasClass('invisible')) {
             // TODO: 表示処理：invisible クラス削除
+            $(selector).removeClass('invisible')
             // TODO: エフェクト処理： targets で設定した callback関数の実行
         }
     }
