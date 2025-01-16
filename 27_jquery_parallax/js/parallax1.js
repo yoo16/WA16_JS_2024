@@ -3,9 +3,11 @@ $(document).ready(function () {
     const $parallaxContent = $('#parallaxContent');
 
     // TODO: スクロール: jqScroll
+    $(window).scroll(function () {
         // TODO: scrollY: スクロール位置を取得し、0.5 をかける
         // jqScrollTopGet
-        const scrollY = 0
+        const scrollY = $(this).scrollTop();
+        console.log(scrollY)
         // TODO: parallaxHeight: パララックス対象の高さ取得
         // jqOuterHeight
         const parallaxHeight = 0
@@ -17,5 +19,7 @@ $(document).ready(function () {
         const translateY = Math.min(parallaxHeight / 2, scrollY * 0.2);
 
         // TODO: 文字の位置を設定： transform: translateY(translateY px)
-        // jqCssSet
+        // jqCssSet 
+    });
+
 });
