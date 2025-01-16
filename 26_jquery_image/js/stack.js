@@ -34,9 +34,9 @@ function stackAnimation1() {
     // 元に戻すアニメーション
     function resetPosition() {
         // TODO: 重ね順をオート設定: css('z-index', 'auto')
+        $topImage.css('z-index', 'auto')
         // TODO: 自分の要素 $(this) を id=image-container の先頭に移動: prependTo()
         // TODO: 元の位置に戻すアニメーション: left: 0, top: 0, opacity: 0
-        $topImage.css('z-index', 'auto')
         $topImage.prependTo('#image-container')
             .animate({
                 opacity: 1,
