@@ -2,6 +2,8 @@ $(document).ready(function () {
     const $parallax = $('#parallax');
     const $parallaxContent = $('#parallaxContent');
 
+    $parallaxContent.css('transform', 'translateX(0)')
+
     // TODO: スクロール: jqScroll
     $(window).scroll(function () {
         // TODO: scrollY: スクロール位置を取得し、0.5 をかける
@@ -24,6 +26,9 @@ $(document).ready(function () {
         // TODO: 文字の位置を設定： transform: translateY(translateY px)
         // jqCssSet 
         $parallaxContent.css('transform', 'translateY(' + translateY + 'px)');
+
+        translateX = scrollY * 0.2
+        $parallaxContent.css('transform', 'translateX(' + translateX + 'px)');
     });
 
 });
