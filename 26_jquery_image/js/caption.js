@@ -45,6 +45,7 @@ $(function () {
         },
         mouseleave: function () {
             // TODO: マウスアウトでキャプション非表示: class=caption
+            $(this).find('.caption').stop().fadeOut(300)
         }
     }, 'li');
 
