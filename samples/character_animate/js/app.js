@@ -21,21 +21,50 @@ $(function () {
     let lastX = 0, lastY = 0;
     let vx = 0, vy = 0
 
-    worksData.forEach(data => {
-        // アイテム作成
-        const workEl = createWorkElement(data);
-
-        // ステージにアイテム追加
-        stage.append(workEl);
-
-        // itemsにデータ追加
-        items.push({
-            work: workEl[0],
-            image: workEl.find(".image")[0],
-            position: { x: data.x, y: data.y, r: data.r }
+    function createWorks() {
+        worksData.forEach(data => {
+            // アイテム作成
+            const workEl = createWorkElement(data);
+            // ステージにアイテム追加
+            stage.append(workEl);
+            // itemsにデータ追加
+            items.push({
+                work: workEl[0],
+                image: workEl.find(".image")[0],
+                position: { x: data.x, y: data.y, r: data.r }
+            });
         });
-    });
+    }
 
+    function createWorkElement(data) {
+        // 画像領域
+        const work = $("<div>")
+            .addClass("work")
+        // 画像
+        const image = $("<div>")
+            .addClass("image")
+            .css("background-image", `url('${data.image}')`)
+            .on({
+                mouseover: function () {
+                    $(this).animate({ opacity: 0.8 }, 300);
+                },
+                mouseout: function () {
+                    $(this).animate({ opacity: 1.0 }, 300);
+                },
+                click: function () {
+                    // クリック時にモーダルウィンドウでフル表示
+                    if (data.href) {
+                        location.href = data.href;
+                    } else {
+                        showModal(data.image);
+                    }
+                }
+            });
+        work.append(image);
+        return work;
+    }
+
+    // マウスホイール
     function onWheel(event) {
         // マウスホイールの移動量で速度計算
         vx = event.deltaX * wheelSpeed;
@@ -43,21 +72,24 @@ $(function () {
         event.preventDefault();
     }
 
+    // ポインタクリック
     function onPointerDown(event) {
         pointerDown = true;
         lastX = event.pageX;
         lastY = event.pageY;
+        // 速度を0
         vx = 0;
         vy = 0;
     }
 
+    // ポインタ移動
     function onPointerMove(event) {
         if (pointerDown) {
             // マウスポインタの現在位置を取得
             const pageX = event.pageX;
             const pageY = event.pageY;
 
-            // 移動速度（vx, vy）を計算
+            // 移動速度計算
             vx = -(pageX - lastX);
             vy = -(pageY - lastY);
 
@@ -69,10 +101,12 @@ $(function () {
         }
     }
 
+    // ポインタリリース
     function onPointerUp() {
         pointerDown = false;
     }
 
+    // ウィンドウリサイズ
     function onResize() {
         const lastR = R;
         const ratio = R / lastR;
@@ -97,7 +131,8 @@ $(function () {
         offsetY = -H * 0.5;
 
         // アイテムの位置やサイズの基準となる値
-        R = Math.min(W * 0.5, H * 0.5);
+        R = Math.min(W, H * 0.5);
+        console.log("R:", R)
 
         // アイテムの位置を設定
         items.forEach(item => {
@@ -108,23 +143,6 @@ $(function () {
         // スクロール範囲の計算
         scrollX = maxCol * R;
         scrollY = maxRow * R;
-
-        // ウィンドウ比率による調整
-        // 横方向: wRate 
-        // 縦方向: hRate 
-        const wRate = W / (H * (maxCol - 1));
-        const hRate = H / (W * (maxRow - 1));
-
-        // 横方向または縦方向の比率が1を超える場合、アイテム座標調整&スクロール範囲拡大
-        if (wRate > 1) {
-            // 横方向
-            items.forEach(item => item.position.x *= wRate);
-            scrollX *= wRate;
-        } else if (hRate > 1) {
-            // 縦方向
-            items.forEach(item => item.position.y *= hRate);
-            scrollY *= hRate;
-        }
 
         // 画像位置調整
         items.forEach(item => {
@@ -144,12 +162,9 @@ $(function () {
 
     function update() {
         // 現在のX軸とY軸の速度
-        vx *= vRate;
-        vy *= vRate;
-
         // 目標位置
-        targetX -= vx;
-        targetY -= vy;
+        targetX -= (vx * vRate);
+        targetY -= (vy * vRate);
 
         if (targetX !== X || targetY !== Y) {
             // 現在の位置を目標位置に近づける
@@ -163,18 +178,18 @@ $(function () {
             items.forEach(item => {
                 let frameX = X + item.position.x * R;
                 let frameY = Y + item.position.y * R;
-                let frameSize = item.position.r * R * 0.5;
+                let frameSize = item.position.r * R;
 
                 // アイテムが一定範囲を超えた場合に再配置（X軸）
                 if (Math.round((frameX + frameSize) / scrollX) !== 0) {
-                    item.position.x -= (Math.round((frameX + frameSize)) > 0) ? scrollX / R : -scrollX / R;
+                    item.position.x -= ((frameX + frameSize) > 0) ? scrollX / R : -scrollX / R;
                     $(item.work).css("left", `${item.position.x * R}px`);
                     frameX = X + item.position.x * R;
                 }
 
                 // アイテムが一定範囲を超えた場合に再配置（Y軸）
                 if (Math.round((frameY + frameSize) / scrollY) !== 0) {
-                    item.position.y -= (Math.round((frameY + frameSize)) > 0) ? scrollY / R : -scrollY / R;
+                    item.position.y -= ((frameY + frameSize) > 0) ? scrollY / R : -scrollY / R;
                     $(item.work).css("top", `${item.position.y * R}px`);
                     frameY = Y + item.position.y * R;
                 }
@@ -187,42 +202,9 @@ $(function () {
         window.requestAnimationFrame(update);
     }
 
-    function createWorkElement(data) {
-        // 画像領域
-        const work = $("<div>")
-            .addClass("work")
-            .attr("data-pos", { x: data.x, y: data.y, r: data.r });
-
-        // 画像
-        const image = $("<div>")
-            .addClass("image")
-            .css("background-image", `url('${data.image}')`)
-            .on({
-                mouseover: function () {
-                    $(this).animate({ opacity: 0.8 }, 300);
-                },
-                mouseout: function () {
-                    $(this).animate({ opacity: 1.0 }, 300);
-                },
-                click: function () {
-                    // クリック時にモーダルウィンドウでフル表示
-                    if (data.href) {
-                        location.href = data.href;
-                    } else {
-                        showModal(data.image);
-                    }
-                }
-            });
-
-        work.append(image);
-
-        return work;
-    }
-
     function showModal(imageUrl) {
         // モーダル背景
-        const modalOverlay = $("<div>")
-            .addClass("modal-overlay")
+        const modalOverlay = $("<div>").addClass("modal-overlay")
 
         // モーダルウィンドウ
         const modalContent = $("<div>")
@@ -257,6 +239,7 @@ $(function () {
     document.addEventListener('pointerup', onPointerUp);
     window.addEventListener('resize', onResize);
 
+    createWorks();
     reset();
     update();
 });
