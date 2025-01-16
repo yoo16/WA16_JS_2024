@@ -29,7 +29,9 @@ $(function () {
         // 画像が読み込みイベント
         $('.item').on('load', function () {
             // TODO: ローディングフェードアウト＆削除
-
+            $(this).siblings('.loading').fadeOut(200, function() {
+                $(this).remove()
+            })
             // 画像フェードイン
             $(this).fadeIn(200);
         });
