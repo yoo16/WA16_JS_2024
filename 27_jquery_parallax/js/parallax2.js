@@ -33,6 +33,7 @@ $(document).ready(function () {
             // TODO: 表示処理：invisible クラス削除
             $(selector).removeClass('invisible')
             // TODO: エフェクト処理： targets で設定した callback関数の実行
+            callback(selector)
         }
     }
 
@@ -41,6 +42,8 @@ $(document).ready(function () {
         // TODO: アニメーション
         // css: opacity: 0
         // animate: opacity: 1
+        $(selector).css('opacity', 0)
+            .animate({ opacity: 1 }, 1000)
     }
 
     // スライドイン
