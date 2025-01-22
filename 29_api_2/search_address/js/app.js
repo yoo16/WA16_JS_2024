@@ -39,7 +39,6 @@ const renderPrefectures = (prefectures) => {
 
 // 郵便番号検索
 const searchAddress = async (zipcode) => {
-    if (!zipcode) return;
     try {
         const query_param = new URLSearchParams({ zipcode: zipcode, })
         // TODO: SEARCH_URI に zipcode を追加
@@ -61,10 +60,11 @@ const searchHandler = async () => {
         errorDisplay.innerHTML = '郵便番号を入力してください';
         return;
     }
-    var data = await searchAddress(zipcode);
+    // 非同期で searchAddress() を実行
+    const data = await searchAddress(zipcode);
     console.log(data);
     if (data.results) {
-        var results = data.results[0];
+        const results = data.results[0];
         // TODO: value に都道府県コード設定: prefcode
         document.getElementById('prefecture').value;
         // TODO: テキストに住所設定: address2, address3

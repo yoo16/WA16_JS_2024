@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { text: "未来は、自分の夢の美しさを信じる人に属している。", author: "エレノア・ルーズベルト" },
     ];
 
-    // ランダムな名言を取得するPromise
+    // Promise開始
     function fetchRandomQuote() {
         return new Promise((resolve, reject) => {
             loadingDiv.classList.remove("hidden");
@@ -20,8 +20,10 @@ document.addEventListener("DOMContentLoaded", function () {
             quoteDiv.classList.add("hidden");
             authorDiv.classList.add("hidden");
 
+            // 待機時間
             setTimeout(() => {
-                const success = Math.random() > 0.2; // 80%の確率で成功
+                // 80%の確率で成功
+                const success = Math.random() > 0.2;
                 if (success) {
                     var index = Math.floor(Math.random() * quotes.length);
                     const randomQuote = quotes[index];
@@ -33,26 +35,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 名言を表示する
-    function displayQuote(quote) {
-        quoteDiv.textContent = `"${quote.text}"`;
-        authorDiv.textContent = `- ${quote.author}`;
-        quoteDiv.classList.remove("hidden");
-        authorDiv.classList.remove("hidden");
-    }
-
-    // エラーメッセージを表示
-    function displayError(message) {
-        errorDiv.textContent = message;
-        errorDiv.classList.remove("hidden");
-    }
-
     // Promise処理
     function handlerRandomQuote() {
         fetchRandomQuote()
             .then(quote => {
                 // TODO: 名言表示：displayQuote() を実行
-                displayQuote(quote);
             })
             .catch(error => {
                 // TODO: 失敗時の処理： displayError() を実行
@@ -73,6 +60,20 @@ document.addEventListener("DOMContentLoaded", function () {
     //         loadingDiv.classList.add("hidden");
     //     }
     // }
+
+    // 名言を表示する
+    function displayQuote(quote) {
+        quoteDiv.textContent = `"${quote.text}"`;
+        authorDiv.textContent = `- ${quote.author}`;
+        quoteDiv.classList.remove("hidden");
+        authorDiv.classList.remove("hidden");
+    }
+
+    // エラーメッセージを表示
+    function displayError(message) {
+        errorDiv.textContent = message;
+        errorDiv.classList.remove("hidden");
+    }
 
     // ボタンクリックイベント
     fetchQuoteButton.addEventListener("click", handlerRandomQuote);
