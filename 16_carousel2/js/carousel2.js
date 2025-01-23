@@ -1,6 +1,6 @@
 const carouselImages = document.getElementById("carousel-images");
 const thumbnailContainer = document.getElementById("thumbnail-container");
-const imageWidth = 200; // 各画像の幅
+let imageWidth = 0; // 各画像の幅を動的に取得するための変数
 let currentIndex = items.length; // 初期インデックスは中央スタート
 let isTransitioning = false;
 
@@ -19,7 +19,14 @@ function createCarousel() {
     });
 
     // 初期位置を中央のアイテムリストに設定
-    carouselImages.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
+    setTimeout(() => {
+        // `.carousel-image` の幅を取得
+        const firstImage = document.querySelector(".carousel-image");
+        if (firstImage) {
+            imageWidth = firstImage.offsetWidth; // 幅を取得
+            carouselImages.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
+        }
+    }, 0); // DOM が更新された後に幅を取得するために遅延を設定
 }
 
 /**
@@ -32,27 +39,26 @@ function updateCarousel() {
     carouselImages.style.transition = "transform 0.5s ease";
 
     // トランジション終了後の処理
-    carouselImages.addEventListener(
-        "transitionend",
-        () => {
-            // 無限スクロール処理
-            if (currentIndex <= 0) {
-                // 最後の画像に移動したら中央リストの同じ画像に戻す
-                currentIndex = items.length;
-                carouselImages.style.transition = "none"; // トランジションを無効化
-                carouselImages.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
-            } else if (currentIndex >= items.length * 2) {
-                // 最初の画像に移動したら中央リストの同じ画像に戻す
-                currentIndex = items.length;
-                carouselImages.style.transition = "none"; // トランジションを無効化
-                carouselImages.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
-            }
-            isTransitioning = false;
-        },
-        { once: true }
-    );
+    setTimeout(() => {
+        // 無限スクロール処理
+        if (currentIndex <= 0) {
+            // 最後の画像に移動したら中央リストの同じ画像に戻す
+            currentIndex = items.length;
+            carouselImages.style.transition = "none"; // トランジションを無効化
+            carouselImages.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
+        } else if (currentIndex >= items.length * 2) {
+            // 最初の画像に移動したら中央リストの同じ画像に戻す
+            currentIndex = items.length;
+            carouselImages.style.transition = "none"; // トランジションを無効化
+            carouselImages.style.transform = `translateX(${-currentIndex * imageWidth}px)`;
+        }
 
-    updateThumbnails();
+        // トランジションを再び有効化
+        setTimeout(() => {
+            carouselImages.style.transition = "transform 0.5s ease";
+            isTransitioning = false;
+        }, 50);
+    }, 500); // トランジション時間に合わせる
 }
 
 /**
