@@ -4,7 +4,7 @@
 
 .carousel-container {
     /*  width, height の範囲外は非表示 */
-    /* overflow: hidden; */
+    overflow: hidden;
     width: 100%;
     margin: 1rem 0;
 }
@@ -27,6 +27,9 @@
     flex-shrink: 0;
     /* 各画像を中央に揃える */
     margin: 0 auto;
+}
+
+.carousel-image img {
 }
 
 .carousel-button {

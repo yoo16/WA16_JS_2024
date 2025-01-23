@@ -11,11 +11,15 @@ let isTransitioning = false;
 function createCarousel() {
     const scrollItems = items.concat(items).concat(items); // アイテムを3倍に複製
     scrollItems.forEach((item) => {
+        const div = document.createElement("div");
+        div.classList.add("carousel-image");
+
         const img = document.createElement("img");
         img.src = item.image;
-        img.classList.add("carousel-image");
         img.onclick = () => openModal(item.id);
-        carouselImages.appendChild(img);
+
+        div.appendChild(img)
+        carouselImages.appendChild(div);
     });
 
     // 初期位置を中央のアイテムリストに設定
