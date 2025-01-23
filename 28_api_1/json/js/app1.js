@@ -23,7 +23,7 @@ function update() {
     user.city = document.getElementById('user-city').value;
 
     // TODO: オブジェクト -> JSON
-    jsonString = "";
+    jsonString = JSON.stringify(user);
     console.log(jsonString)
     document.getElementById('json-user').textContent = jsonString;
 }
