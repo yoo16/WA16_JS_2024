@@ -1,8 +1,9 @@
-// JSONデータ読み込み
+// JSONデータ読み込み:（ダミーデータ）
 var jsonString = document.getElementById('data').textContent;
+console.log(jsonString)
 
 // TODO: JSON -> オブジェクト
-var user = {};
+var user = JSON.parse(jsonString);
 console.log(user)
 displayUser(user);
 
