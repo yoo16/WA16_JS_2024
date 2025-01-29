@@ -11,7 +11,8 @@ async function fetchWeather() {
         const uri = 'api/weather/report.php';
         // const uri = 'api/weather/list.json';
 
-        const response = await fetch(uri);
+        // TODO:APIから非同期でデータ取得: fetch()
+        const response = {};
         if (!response.ok) {
             displayError("天気情報の取得に失敗しました");
         }
@@ -30,6 +31,7 @@ async function displayWeather(area = "") {
 
         // Fetch API データ
         weatherData = await fetchWeather();
+        console.log(weatherData);
 
         // フィルタリング
         const cities = filterWeather(area);
@@ -38,28 +40,29 @@ async function displayWeather(area = "") {
             return;
         }
 
-        // 日時
-        reportedAtContainer.innerHTML = weatherData.reportedAt;
+        // TODO: 日時表示: weatherData.reportedAt
+        reportedAtContainer.innerHTML;
 
-        // トピック表示
-        topicContainer.innerHTML = weatherData.topics;
+        // TODO: トピック表示: weatherData.topics
+        topicContainer.innerHTML;
 
         // 天気カード生成
-        cities.forEach(({ area, city, temperature_max, temperature_min, condition, precipitationProbability }) => {
+        cities.forEach(({ city, temperature_max, temperature_min, condition, precipitationProbability }) => {
             const card = document.createElement('div');
             card.className = 'bg-white shadow-md rounded-lg p-3 text-center';
 
+            // TODO: 仕様書からデータバインド
             card.innerHTML = `
-                <h2 class="text-md font-bold mb-2">${city}</h2>
+                <h2 class="text-md font-bold mb-2"></h2>
                 <p class="flex justify-center">
-                    <img class="w-12 h-12" src="images/${condition}.png" alt="${condition}">
+                    <img class="w-12 h-12" src="images/.png" alt="">
                 </p>
                 <p class="text-gray-500">
-                    <span class="text-red-500 font-bold">${temperature_max}</span>
+                    <span class="text-red-500 font-bold"></span>
                     /
-                    <span class="text-blue-500 font-bold">${temperature_min}</span>
+                    <span class="text-blue-500 font-bold"></span>
                 </p>
-                <p class="text-gray-500">${precipitationProbability}%</p>
+                <p class="text-gray-500">%</p>
             `;
             container.appendChild(card);
         });
@@ -85,10 +88,13 @@ function filterWeather(selected) {
  * フィルタボタン
  */
 function setupFilterButtons() {
+    // class=filter-btn をすべて選択
     const filterButtons = document.querySelectorAll('.filter-btn');
     filterButtons.forEach((button) => {
+        // クリックイベント追加
         button.addEventListener('click', (event) => {
             const area = event.currentTarget.dataset.area || '';
+            // 気象情報表示
             displayWeather(area);
         });
     });
