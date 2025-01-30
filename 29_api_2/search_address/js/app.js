@@ -41,8 +41,9 @@ const renderPrefectures = (prefectures) => {
 const searchAddress = async (zipcode) => {
     try {
         const query_param = new URLSearchParams({ zipcode: zipcode, })
+        console.log(query_param.toString())
         // TODO: SEARCH_URI に zipcode を追加
-        const uri = SEARCH_URI;
+        const uri = SEARCH_URI + '?' + query_param.toString();
         console.log(uri);
         // TODO: 郵便番号検索APIにアクセス（非同期）
         const response = {};
