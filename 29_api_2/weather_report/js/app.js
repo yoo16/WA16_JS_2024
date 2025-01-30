@@ -41,10 +41,10 @@ async function displayWeather(area = "") {
         }
 
         // TODO: 日時表示: weatherData.reportedAt
-        reportedAtContainer.innerHTML;
+        reportedAtContainer.innerHTML = weatherData.reportedAt;
 
         // TODO: トピック表示: weatherData.topics
-        topicContainer.innerHTML;
+        topicContainer.innerHTML = weatherData.topics;
 
         // 天気カード生成
         cities.forEach(({ city, temperature_max, temperature_min, condition, precipitationProbability }) => {
@@ -55,7 +55,7 @@ async function displayWeather(area = "") {
             card.innerHTML = `
                 <h2 class="text-md font-bold mb-2"></h2>
                 <p class="flex justify-center">
-                    <img class="w-12 h-12" src="images/.png" alt="">
+                    <img class="w-12 h-12" src="images/${condition}.png" alt="">
                 </p>
                 <p class="text-gray-500">
                     <span class="text-red-500 font-bold"></span>
