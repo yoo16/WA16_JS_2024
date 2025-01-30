@@ -46,9 +46,9 @@ const searchAddress = async (zipcode) => {
         const uri = SEARCH_URI + '?' + query_param.toString();
         console.log(uri);
         // TODO: 郵便番号検索APIにアクセス（非同期）
-        const response = {};
+        const response = await fetch(uri);
         // TODO: JSONデータを変換（非同期）
-        const data = {};
+        const data = await response.json();
         return data;
     } catch (error) {
         errorDisplay.innerHTML = error;
