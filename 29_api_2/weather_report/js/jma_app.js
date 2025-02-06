@@ -11,6 +11,8 @@ var weatherData;
 var centers;
 var offices;
 
+// Mac: Cmd + Shift + R
+// Win: Ctrl + Shift + R
 /**
  * getCenter
  * API取得: エリアセンターデータ
@@ -18,8 +20,8 @@ var offices;
  */
 async function getCenter() {
     try {
-        // API URIの設定: https://www.jma.go.jp/bosai/common/const/area.json
-        const uri = '';
+        // TODO: API URIの設定: https://www.jma.go.jp/bosai/common/const/area.json
+        const uri = 'https://www.jma.go.jp/bosai/common/const/area.json';
         // const uri = './data/jma-area.json';
         const response = await fetch(uri);
         if (!response.ok) {
