@@ -41,7 +41,7 @@ async function getCenter() {
 async function getForecast(officeCode) {
     try {
         // TODO: API URIの設定: https://www.jma.go.jp/bosai/forecast/data/forecast/xxxxx.json
-        const uri = '';
+        const uri = 'https://www.jma.go.jp/bosai/forecast/data/forecast/' + officeCode + '.json';
         // const uri = "./data/dummy.json";
         console.log(uri)
         const response = await fetch(uri);
@@ -154,7 +154,7 @@ async function displayWeather(officeCode) {
             card.innerHTML = `
                     <h2 class="text-md font-bold mb-2"></h2>
                     <p class="flex justify-center">
-                        <img class="w-12 h-12" src="svg/" alt="">
+                        <img class="w-12 h-12" src="svg/${code}.svg" alt="">
                     </p>
                     <p class="text-gray-500">
                         <span class="text-red-500 font-bold"></span>
