@@ -152,16 +152,16 @@ async function displayWeather(officeCode) {
             card.className = 'bg-white shadow-md rounded-lg p-3 text-center';
             // TODO: 気象データをバインド
             card.innerHTML = `
-                    <h2 class="text-md font-bold mb-2"></h2>
+                    <h2 class="text-md font-bold mb-2">${name}</h2>
                     <p class="flex justify-center">
-                        <img class="w-12 h-12" src="svg/${code}.svg" alt="">
+                        <img class="w-12 h-12" src="svg/${code}.svg" alt="${weatherName}">
                     </p>
                     <p class="text-gray-500">
-                        <span class="text-red-500 font-bold"></span>
+                        <span class="text-red-500 font-bold">${temperature[3]}</span>
                         /
-                        <span class="text-blue-500 font-bold"></span>
+                        <span class="text-blue-500 font-bold">${temperature[2]}</span>
                     </p>
-                    <p class="text-gray-500">%</p>
+                    <p class="text-gray-500">${precipitaion}%</p>
                 `;
             weatherContainer.appendChild(card);
         });
