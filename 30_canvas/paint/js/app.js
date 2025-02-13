@@ -101,13 +101,13 @@ canvas.addEventListener('touchcancel', endDrawing);
 // コントロール変更時のイベントリスナー
 colorPicker.addEventListener('change', (e) => {
     // TODO: 色変更処理: currentColor に target.value 設定
-    currentColor = '';
+    currentColor = e.target.value;
 });
 
 // 太さ入力
 lineWidthRange.addEventListener('input', (e) => {
     // TODO: 色変更処理: currentLineWidth に target.value 設定
-    currentLineWidth = 0;
+    currentLineWidth = e.target.value;
     lineWidthValue.textContent = currentLineWidth;
 });
 
