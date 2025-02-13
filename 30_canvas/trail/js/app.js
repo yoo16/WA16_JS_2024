@@ -57,7 +57,7 @@ function animate() {
             if (distance < distanceLimit) {
                 // 透明度を動的に設定
                 // TODO: (1) ストロークを白色に変更: rgba(255, 255, 255, 1 - distance / 100)
-                ctx.strokeStyle = `rgba(0, 0, 0, ${1 - distance / 100})`;
+                ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 100})`;
 
                 // 太さを設定
                 ctx.lineWidth = 0.5;
