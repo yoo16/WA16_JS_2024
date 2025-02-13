@@ -42,8 +42,10 @@ function animate() {
 
     for (const dot of dots) {
         // TODO: (3) ドット座標更新 update() を実行
+        dot.update();
 
         // TODO: (4) ドット描画 draw() を実行
+        dot.draw();
     }
 
     // 各ドットの間の線を描画
