@@ -39,7 +39,7 @@ function animate() {
         face.draw();
     });
     // 衝突チェック
-    // checkCollisions();
+    checkCollisions();
 
     // フレームアニメーション
     requestAnimationFrame(animate);
