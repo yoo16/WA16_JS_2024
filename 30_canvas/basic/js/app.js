@@ -69,7 +69,7 @@ function drawTextOnCanvas(text, x, y, font, color) {
     ctx.textAlign = 'left';
     ctx.textBaseline = 'top';
     // TODO: 文字を描画
-    // fillText(text, x, y)
+    ctx.fillText(text, x, y)
 }
 
 // 描画
