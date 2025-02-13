@@ -49,7 +49,7 @@ function drawCircle() {
     ctx.beginPath();
     // TODO: 円を描画
     // arc(x, y, radius, startAngle, endAngle)
-    ctx.arc(0, 0, 0, 0, Math.PI * 2);
+    ctx.arc(200, 200, 50, 0, Math.PI * 2);
     ctx.closePath();
     ctx.fill();
     ctx.stroke();
