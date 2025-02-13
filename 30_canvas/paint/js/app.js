@@ -71,10 +71,13 @@ canvas.addEventListener('touchstart', (e) => {
     e.preventDefault();
 });
 
+// Win: Ctrl + Shift + R
+// Mac: Cmd + Shift + R
 // マウス移動
 canvas.addEventListener('mousemove', (e) => {
-    // TODO: getBoundingClientRect() を使ってマウスの座標を取得
-    const rect = {};
+    // TODO: getBoundingClientRect() 座標取得
+    const rect = canvas.getBoundingClientRect();
+    // マウスイベント e でマウスの座標を取得
     draw(e.clientX - rect.left, e.clientY - rect.top);
 });
 
