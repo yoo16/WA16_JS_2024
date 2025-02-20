@@ -57,7 +57,7 @@ async function setupCamera() {
 async function detectFace() {
     const estimationConfig = { flipHorizontal: false };
     // TODO: 顔検知処理(非同期処理): detector.estimateFaces()
-    const faces = {};
+    const faces = detector.estimateFaces(videoEl, estimationConfig);
     // console.log(faces);
     return faces;
 }
@@ -78,14 +78,18 @@ function drawResults(faces) {
             // 検出された各点の座標が格納
             const landmarks = face.landmarks || face.keypoints;
             // 顔検出の各点を描画
-            landmarks.forEach((point) => {
-                // canvasの座標に変換
-                const x = point.x * canvasEl.width / videoWidth;
-                const y = point.y * canvasEl.height / videoHeight;
-                // 点を描画
-                ctx.beginPath();
-                ctx.arc(x, y, 2, 0, 2 * Math.PI);
-                ctx.fill();
+            const upperLipIndices = [61, 146, 91, 181, 84, 17, 314, 405, 321, 375, 291, 308, 324, 318, 402, 317, 14, 87, 178, 88, 95, 78, 191, 80, 81, 82, 13];
+
+            landmarks.forEach((point, index) => {
+                if (upperLipIndices.includes(index)) {
+                    // canvasの座標に変換
+                    const x = point.x * canvasEl.width / videoWidth;
+                    const y = point.y * canvasEl.height / videoHeight;
+                    // 点を描画
+                    ctx.beginPath();
+                    ctx.arc(x, y, 1, 0, 2 * Math.PI);
+                    ctx.fill();
+                }
             });
         });
     }
