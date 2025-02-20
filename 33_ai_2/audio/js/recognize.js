@@ -33,7 +33,7 @@ function predictWord(words) {
             // スコアが高い順に並べ替え
             scores.sort((s1, s2) => s2.score - s1.score);
             // TODO: 単語決定: scores[0].word;
-            const recognizedWord = "";
+            const recognizedWord = scores[0].word;
             console.log(recognizedWord);
 
             // 単語ハイライト
